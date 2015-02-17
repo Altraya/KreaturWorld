@@ -1,12 +1,13 @@
 <?php
 	/* General controller */
 
-	include_once("views/generalView");
+	require_once("./views/generalView.class.php");
 
 	$view = new generalView();
 
-	$view->header("Accueil");
+	$view->header("KreaturWorld - Accueil");
 		$view->topBar();
+		$view->menuBar();
 	$view->closeBody();
 	$view->closeHTML();
 ?>
