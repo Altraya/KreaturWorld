@@ -1,9 +1,9 @@
 <?php
 	/* General controller */
 
-	require_once("./views/generalView.class.php");
+	require_once("./views/GeneralView.class.php");
 
-	$view = new generalView();
+	$view = new GeneralView();
 
 	$view->header("KreaturWorld - Accueil");
 		$view->topBar();

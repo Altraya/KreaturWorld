@@ -1,7 +1,7 @@
 <?php
 /* Vue général */
 
-class generalView{
+class GeneralView{
 
 	public function __construct(){
 	}
