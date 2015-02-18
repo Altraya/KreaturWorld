@@ -16,6 +16,13 @@ class GeneralView{
 				<title>'.$pageTitle.'</title>
 				<link rel="stylesheet" href="css/foundation.css">
 				<link rel="stylesheet" href="css/normalize.css">
+
+				<!--[if lt IE 9]>
+				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+				<![endif]-->
+				<!--[if lte IE 7]>
+				<link rel="stylesheet" href="../css/Css_Page_FW_IE.css" />
+				<![endif]-->
 			</head>
 		<body>';
 
@@ -29,7 +36,7 @@ class GeneralView{
 			<nav class="top-bar" data-topbar role="navigation">
 			  	<ul class="title-area">
 			    	<li class="name">
-			      		<h1><a href="#">KreaturWorld</a></h1>
+			      		<h1><a href="index.php">KreaturWorld</a></h1>
 			    	</li>
 			     	<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 			    	<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -49,7 +56,7 @@ class GeneralView{
 	public function menuBar(){
 		$html = "";
 		$html.='
-			<nav class="top-bar" data-topbar role="navigation">
+			<nav class="top-bar" data-topbar role="navigation" data-options="is_hover: true">
 
 			  	<section class="top-bar-section">
 			    <!-- Left Nav Section -->
@@ -68,7 +75,7 @@ class GeneralView{
 			    		<li class="has-dropdown">
 					        <a href="#">Antre</a>
 					        <ul class="dropdown">
-					          	<li><a href="#">Kreaturs</a></li>
+					          	<li><a href="antre.php">Kreaturs</a></li>
 					          	<li><a href="#">Actions</a></li>
 					          	<li><a href="#">Cimetière</a></li>
 					        </ul>
@@ -111,6 +118,64 @@ class GeneralView{
 
 	public function closeHTML(){
 		echo'</html>';
+	}
+
+
+	//Close body and html and script for topbar
+	public function endPage(){
+		$html = '
+				
+			<script src="js/vendor/jquery.js"></script>
+		  	<script src="js/foundation/foundation.js"></script>
+		  	<script src="js/foundation/foundation.topbar.js"></script>
+
+		  	<script>
+    			$(document).foundation();
+  			</script>
+
+  			</body>
+			</html>
+		';
+		echo($html);		
+	}
+
+	public function section(){
+		echo"<section>";
+	}
+
+	//End of the section part
+	public function endSection(){
+		echo("</section>");		
+	}
+
+	//Footer
+	public function footer(){
+		$html = '
+		<footer>
+			<p>
+			
+				&copy; Karakayn 2015
+			
+			</p>
+		</footer>
+		';
+		echo $html;
+	}
+
+	public function paragraph(){
+		echo '<p>';
+	}
+
+	public function endParagraph(){
+		echo'</p>';
+	}
+
+	public function notConnected(){
+		echo'
+			<p> Vous n\'êtes pas connecté vous ne pouvez donc pas accéder à cette partie. <br/>
+				<a href="inscription.php">Inscrivez vous</a> ou <a href="connexion.php">connectez vous</a> pour y accéder
+			</p>
+		';
 	}
 }
 ?>
