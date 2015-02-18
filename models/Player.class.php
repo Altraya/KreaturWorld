@@ -1,6 +1,6 @@
 <?php
 /*
-*	Player.class.php : a Player object
+*	Player.class.php : Player object
 *
 *	Author : Karakayn
 */
@@ -112,5 +112,7 @@ class Player{
 	public function toString(){
 		echo('Pseudo = '.$this->getPseudo().', mdp = '.$this->getPwd().', Date de naissance = '.$this->getBirthdate().', sexe = '.$this->getSex().', mail = '.$this->getMail().', date d\'inscription = '.$this->getinscriptionDate().' ');
 	}
+
+
 }
 ?>
