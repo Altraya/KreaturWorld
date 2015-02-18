@@ -21,7 +21,7 @@ class PlayerManager{
 	public function setDb(PDO $db){
 		$this->_db = $db;
 	}
-
+/*
 	//Ajoute un player donné en paramètre, dans la bdd
 	public function add(Player $player){
 
@@ -114,8 +114,8 @@ class PlayerManager{
 		    'pass' => $pass));
 		$resultat = $req->fetch();
 		Marche aussi mais je prefere le bind param
-		*/
+		*//*
 		return $resultat;
-	}
+	}*/
 }
 ?>

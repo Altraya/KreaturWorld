@@ -7,13 +7,13 @@
 class Player{
 
 	private $_id;				//player's id
-	private $_pseudo;			//him pseudo
-	private $_pwd;				//him password (crypt)
-	private $_birthdate;		//him birthdate
-	private $_sex;				//him sex
-	private $_avatar;			//him avatar
-	private $_mail;				//him mail
-	private $_inscriptionDate;	//him inscription date
+	private $_pseudo;			//his pseudo
+	private $_pwd;				//his password (crypt)
+	private $_birthdate;		//his birthdate
+	private $_sex;				//his sex
+	private $_avatar;			//his avatar
+	private $_mail;				//his mail
+	private $_inscriptionDate;	//his inscription date
 	
 	
 	/*Constructeur*/

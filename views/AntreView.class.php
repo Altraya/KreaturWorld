@@ -17,7 +17,7 @@ class AntreView{
 		$html = '
 
 			<h1>L\'antre</h1>
-			<hr/><br/>
+			<hr/>
 			Bienvenue dans l\'antre, vous trouverez ici l\'intégralité de vos Kreaturs, qui n\'attendent que de partir à la conquête d\'Altraya <br/><br/>
 			';
 		echo $html;

@@ -1,9 +1,8 @@
 <?php
 /*
-*	KreaturManager.class.php : Permet de gerer les kreaturs
+*	KreaturManager.class.php : Manage kreaturs
 *
-*	Modele des kreaturs
-*	Permet d'add, de delete, de modifier, d'avoir la liste des kreaturs.
+*	Add/delete/update and list kreaturs
 *	
 *	Author : Karakayn
 */
@@ -20,7 +19,7 @@ class KreaturManager{
 	public function setDb(PDO $db){
 		$this->_db = $db;
 	}
-
+/*
 	//Ajoute une kreatur donné en paramètre, dans la bdd
 	public function add(Kreatur $kreatur){
 
@@ -109,6 +108,6 @@ class KreaturManager{
 		$req->bindParam(':id', $kreatur->getId(), PDO::PARAM_INT);
 		$req->execute();
 		$req->closeCursor();
-	}
+	}*/
 }
 ?>

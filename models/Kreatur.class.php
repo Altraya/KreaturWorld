@@ -1,18 +1,18 @@
 <?php
 /*
-*	Kreatur.class.php : Gere une kreatur
+*	Kreatur.class.php : Kreatur object
 *
 *	Author : Karakayn
 */
 class Kreatur{
 
-	private $_id;				//id de la kreatur
-	private $_nom;				//son nom
-	private $_espece;			//son espece
-	private $_couleur;			//sa couleur
-	private $_age;				//son age
-	private $_proprietaire;		//son proprietaire
-	private $_sexe;				//son sexe
+	private $_id;				//Kreatur's id
+	private $_name;				//his name
+	private $_species;			//his species
+	private $_color;			//his color
+	private $_age;				//his age
+	private $_owner;			//his owner
+	private $_sex;				//his sex
 	
 	
 	/*Constructeur*/
@@ -21,35 +21,35 @@ class Kreatur{
 	}
 
 	/***************************
-		Accesseur de la classe
+		Accesseur of the class
 	****************************/
 
 	public function getId(){
 		return $this->_id;
 	}
 
-	public function getNom(){
-		return $this->_nom;
+	public function getName(){
+		return $this->_name;
 	}
 
-	public function getEspece(){
-		return $this->_espece;
+	public function getSpecies(){
+		return $this->_species;
 	}
 
-	public function getCouleur(){
-		return $this->_couleur;
+	public function getColor(){
+		return $this->_color;
 	}
 
-	public function getProprio(){
-		return $this->_proprietaire;
+	public function getOwner(){
+		return $this->_owner;
 	}
 
 	public function getAge(){
 		return $this->_age;
 	}
 
-	public function getSexe(){
-		return $this->_sexe;
+	public function getSex(){
+		return $this->_sex;
 	}
 
 	/************************/
@@ -58,28 +58,28 @@ class Kreatur{
 		$this->_id = $id;
 	}
 
-	public function setNom($nom){
-		$this->_nom = htmlspecialchars($nom);	
+	public function setName($name){
+		$this->_name = htmlspecialchars($name);	
 	}
 
-	public function setEspece($espece){
-		$this->_espece = htmlspecialchars($espece);	
+	public function setSpecies($species){
+		$this->_species = htmlspecialchars($species);	
 	}
 
-	public function setCouleur($couleur){
-		$this->_couleur = htmlspecialchars($couleur);	
+	public function setColor($color){
+		$this->_color = htmlspecialchars($color);	
 	}
 
-	public function setProprietaire($proprio){
-		$this->_proprietaire = htmlspecialchars($proprio);	
+	public function setOwner($owner){
+		$this->_owner = htmlspecialchars($owner);	
 	}
 
 	public function setAge($age){
 		$this->_age = htmlspecialchars($age);	
 	}
 
-	public function setSexe($sexe){
-		$this->_sexe = htmlspecialchars($sexe);
+	public function setSex($sex){
+		$this->_sex = htmlspecialchars($sex);
 	}
 
 	/************************/
@@ -101,7 +101,7 @@ class Kreatur{
 	}
 
 	public function toString(){
-		echo('Nom = '.$this->getNom().', espece = '.$this->getEspece().', couleur = '.$this->getCouleur().', proprio = '.$this->getProprio().', age = '.$this->getAge().', sexe = '.$this->getSexe().' ');
+		echo('Nom = '.$this->getName().', espece = '.$this->getSpecies().', couleur = '.$this->getColor().', proprio = '.$this->getOwner().', age = '.$this->getAge().', sexe = '.$this->getSex().' ');
 	}
 }
 ?>
