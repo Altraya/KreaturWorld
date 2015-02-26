@@ -12,7 +12,7 @@
 	$viewG = new GeneralView();
 	$view = new AntreView();
 	
-	$viewG->header("KreaturWorld - Accueil");
+	$viewG->header("KreaturWorld - Antre de vos Kréaturs");
 	$viewG->topBar();
 	$viewG->menuBar();
 
