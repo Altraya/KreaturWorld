@@ -88,6 +88,61 @@ class InscriptionView{
 		echo($html);
 	}
 
+		public function connexionForm(){
+		$html = '';
+
+		$html.='
+
+		<form data-abide id="connexionForm" action="connexion.php" method="post">
+
+			<div class="row">
+		    	<div class="large-6 columns">
+					<div class="pseudo-field">
+						<label for="pseudo">Pseudo <small>required</small>
+					  		<input name="pseudo" type="text" required pattern="alpha_numeric" placeholder="Pseudo">
+						</label>
+						<small class="error">Entrez un pseudo valide</small>
+					</div>
+				</div>
+
+
+				<div class="large-6 columns">
+        			<label for="password">Mot de passe <small>required</small>
+          				<input type="password" id="password" placeholder="Mot de passe." name="password" required>
+        			</label>
+        			<small class="error">Entrez un mot de passe.</small>
+				</div>
+			</div>
+
+			
+
+			<div class="row">
+			<hr/>
+		    	<div class="large-6 columns">
+					<p>
+						Mot de passe oublié ?
+					</p>
+				</div>
+
+
+				<div class="large-6 columns">
+        			<p>
+						S\'inscrire.
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<button name="buttonConnexion" form="connexionForm" class="button secondary expand" type="submit">Connexion</button>
+				</div>
+			</div>
+
+		</form>
+		';
+		echo($html);
+	}
+
 	public function title(){
 		$html = '';
 
@@ -99,8 +154,29 @@ class InscriptionView{
 		echo($html);
 	}
 
+	public function titleConnexion(){
+		$html = '';
+
+		$html.='
+			<center>
+				<h1>Connexion</h1>
+			</center>
+		';
+		echo($html);
+	}
+
 	public function successMessage(){
 		$html = 'Félicitation vous êtes désormais inscrit !';
+		echo($html);
+	}
+
+	public function errorMessage(){
+		$html = 'Vous avez saisi un mauvais identifiant ou mot de passe.';
+		echo($html);
+	}
+
+	public function successDeconnexion(){
+		$html = 'Vous avez bien été déconnecté !';
 		echo($html);
 	}
 

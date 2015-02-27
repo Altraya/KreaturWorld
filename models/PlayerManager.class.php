@@ -98,27 +98,19 @@ class PlayerManager{
 		$req->bindParam(':avatar', $joueur->getAvatar(), PDO::PARAM_LOB);
 		$req->execute() or die(print_r($this->_db->errorInfo()));
 		$req->closeCursor();
-	}
+	}*/
 
-	//Vérifie si il existe un joueur avec le pseudo et le mot de passe, retourne un tableau avec son id en plus
+	//Return the id, pseudo and password of one player : if it's not null the player exist.
 	public function verifConnexion($pseudo, $pass){
-
-		$sql = "SELECT id, pseudo, mdp FROM Joueur WHERE pseudo = :pseudo AND mdp = :pass";
+		$sql = "SELECT id, pseudo, pwd FROM player WHERE pseudo = :pseudo AND pwd = :pass";
 		$req = $this->_db->prepare($sql);
 		$req->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
 		$req->bindParam(':pass', $pass, PDO::PARAM_STR);
 		$req->execute() or die(print_r($this->_db->errorInfo()));
 		$resultat = $req->fetch();
 		$req->closeCursor();
-		/*
-		$req = $this->_db->prepare('SELECT id FROM Joueur WHERE pseudo = :pseudo AND mdp = :pass');
-		$req->execute(array(
-		    'pseudo' => $pseudo,
-		    'pass' => $pass));
-		$resultat = $req->fetch();
-		Marche aussi mais je prefere le bind param
-		*/
-		/*return $resultat;
-	}*/
+		
+		return $resultat;
+	}
 }
 ?>

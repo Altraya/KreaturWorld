@@ -41,10 +41,24 @@ class GeneralView{
 			  	</ul>
 
 			  	<section class="top-bar-section">
+			  	';
+			  	//if the player is connected : show deconnexion
+			  	if(isset($_SESSION['playersId'])){
+			  		$html.='
+			    	<!-- Right Nav Section -->
+			    	<ul class="right">			   
+			      		<li class="active"><a href="deconnexion.php">Deconnexion</a></li>
+			   	 	</ul>
+			  		';
+			  	//else show connexion
+			  	}else{
+		$html.='
 			    <!-- Right Nav Section -->
 			    	<ul class="right">			   
-			      		<li class="active"><a href="#">Deconnexion</a></li>
-			   	 	</ul>
+			      		<li class="active"><a href="connexion.php">Connexion</a></li>
+			   	 	</ul>';
+			   	}
+		$html.='
 			  	</section>
 			</nav>
 		';
