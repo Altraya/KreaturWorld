@@ -33,7 +33,7 @@ class InscriptionView{
 				<div class="large-6 columns">
 					<div class="date-field">
 						<label for="date">Date de naissance <small>required</small>
-							<input name="date" type="date" required pattern="date" placeholder="Date de naissance" />
+							<input name="date" type="date" required pattern="date" placeholder="Date de naissance sous la forme (JJ/MM/AAAA)" />
 						</label>
 						<small class="error">Entrez une date valide sur le format (JJ/MM/AAAA)</small>
 					</div>
@@ -45,14 +45,14 @@ class InscriptionView{
         			<label for="password">Mot de passe <small>required</small>
           				<input type="password" id="password" placeholder="Mot de passe." name="password" required>
         			</label>
-        			<small class="error">Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character.</small>
+        			<small class="error">Votre mot de passe doit contenir au moins 8 caractères avec une lettre majuscule, un chiffre et un caractère spécial.</small>
       			</div>
 
 				<div class="large-12 columns">
 					<label for="confirmPassword">Retapez le mot de passe <small>required</small>
 					  	<input type="password" id="confirmPassword" placeholder="Mot de passe." name="confirmPassword" required data-equalto="password">
 					</label>
-					<small class="error">Passwords must match.</small>
+					<small class="error">Les mots de passes doivent être identique.</small>
 				</div>
     		</div>
 
@@ -60,9 +60,9 @@ class InscriptionView{
       			<div class="large-12 columns">
 					<div class="email-field">
 						<label>Email <small>required</small>
-							<input type="email" required>
+							<input name="mail" type="email" required>
 						</label>
-						<small class="error">An email address is required.</small>
+						<small class="error">Une adresse mail valide est requise.</small>
 					</div>
 				</div>
 			</div>
@@ -70,8 +70,8 @@ class InscriptionView{
 			<div class="row">
 				<div class="large-12 columns">
 				<center>
-					<label for="féminin"><input name="radioButtons" type="radio" id="féminin" required>Féminin</label>
-					<label for="masculin"><input name="radioButtons" type="radio" id="masculin" required>Masculin</label>
+					<label for="féminin"><input name="sexe" type="radio" id="féminin" value="féminin" required>Féminin</label>
+					<label for="masculin"><input name="sexe" type="radio" id="masculin" value="masculin" required>Masculin</label>
 				</center>
 				</div>
 			</div>
@@ -96,6 +96,11 @@ class InscriptionView{
 				<h1>Inscription</h1>
 			</center>
 		';
+		echo($html);
+	}
+
+	public function successMessage(){
+		$html = 'Félicitation vous êtes désormais inscrit !';
 		echo($html);
 	}
 

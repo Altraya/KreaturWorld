@@ -24,22 +24,23 @@ class PlayerManager{
 		$this->_db = $db;
 	}
 
-	//Ajoute un joueur donné en paramètre, dans la bdd
-/*	public function add(Joueur $joueur){
+	//Add a player in database
+	public function add(Player $player){
 
-		$sql = "INSERT INTO Joueur (pseudo, mdp, mail, dateDeNaissance, sexe, avatar, dateInscription)
-			VALUES (:pseudo, :mdp, :mail, :dateDeNaissance, :sexe, :avatar, NOW())";
+		$sql = "INSERT INTO player (pseudo, pwd, mail, birthdate, sex, avatarUrl, inscriptionDate)
+			VALUES (:pseudo, :pwd, :mail, :birthdate, :sex, :avatarUrl, :inscriptionDate)";
 		$req = $this->_db->prepare($sql);                     
-		$req->bindParam(':pseudo', $joueur->getPseudo(), PDO::PARAM_STR);
-		$req->bindParam(':mdp', $joueur->getMdp(), PDO::PARAM_STR);
-		$req->bindParam(':mail', $joueur->getMail(), PDO::PARAM_STR);
-		$req->bindParam(':dateDeNaissance', $joueur->getDateDeNaissance(), PDO::PARAM_STR);
-		$req->bindParam(':sexe', $joueur->getSexe(), PDO::PARAM_STR);
-		$req->bindParam(':avatar', $joueur->getAvatar(), PDO::PARAM_LOB);
+		$req->bindParam(':pseudo', $player->getPseudo(), PDO::PARAM_STR);
+		$req->bindParam(':pwd', $player->getPwd(), PDO::PARAM_STR);
+		$req->bindParam(':mail', $player->getMail(), PDO::PARAM_STR);
+		$req->bindParam(':birthdate', $player->getBirthdate(), PDO::PARAM_STR);
+		$req->bindParam(':sex', $player->getSex(), PDO::PARAM_STR);
+		$req->bindParam(':avatarUrl', $player->getAvatar(), PDO::PARAM_STR);
+		$req->bindParam(':inscriptionDate', $player->getInscriptionDate(), PDO::PARAM_STR);
 		$req->execute() or die(print_r($req->errorInfo()));
 		$req->closeCursor();
 	}
-
+/*
 	//Permet de delete un joueur donné en paramètre, de la bdd.
 	public function remove(Joueur $joueur){
 		$sql = "DELETE FROM Joueur WHERE id = :id ";

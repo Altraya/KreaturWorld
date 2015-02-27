@@ -16,12 +16,10 @@ class GeneralView{
 				<title>'.$pageTitle.'</title>
 				<link rel="stylesheet" href="css/foundation.css">
 				<link rel="stylesheet" href="css/normalize.css">
+				<script src="js/vendor/modernizr.js"></script>
 
 				<!--[if lt IE 9]>
 				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-				<![endif]-->
-				<!--[if lte IE 7]>
-				<link rel="stylesheet" href="../css/Css_Page_FW_IE.css" />
 				<![endif]-->
 			</head>
 		<body>';
@@ -126,12 +124,9 @@ class GeneralView{
 		$html = '
 				
 			<script src="js/vendor/jquery.js"></script>
-		  	<script src="js/foundation/foundation.js"></script>
-		  	<script src="js/foundation/foundation.topbar.js"></script>
-
-		  	<script>
-    			$(document).foundation();
-  			</script>
+			<script src="js/vendor/fastclick.js"></script>
+			<script src="js/foundation.min.js"></script>
+			<script>$(document).foundation();</script>
 
   			</body>
 			</html>

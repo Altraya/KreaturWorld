@@ -67,7 +67,7 @@ class Player{
 		return $this->_pseudo = htmlspecialchars($pseudo);
 	}
 
-	public function setMdp($pwd){
+	public function setPwd($pwd){
 		return $this->_pwd = sha1(htmlspecialchars($pwd));
 	}
 
