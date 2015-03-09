@@ -175,6 +175,11 @@ class InscriptionView{
 		echo($html);
 	}
 
+	public function errorMessageDuplicatePlayer(){
+		$html = 'Vous ne pouvez pas vous inscrire avec ce pseudo, car il existe déjà.';
+		echo($html);
+	}
+
 	public function successDeconnexion(){
 		$html = 'Vous avez bien été déconnecté !';
 		echo($html);

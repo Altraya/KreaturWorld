@@ -26,7 +26,7 @@ class PlayerManager{
 
 	//Add a player in database
 	public function add(Player $player){
-
+		
 		$sql = "INSERT INTO player (pseudo, pwd, mail, birthdate, sex, avatarUrl, inscriptionDate)
 			VALUES (:pseudo, :pwd, :mail, :birthdate, :sex, :avatarUrl, :inscriptionDate)";
 		$req = $this->_db->prepare($sql);                     
@@ -36,9 +36,10 @@ class PlayerManager{
 		$req->bindParam(':birthdate', $player->getBirthdate(), PDO::PARAM_STR);
 		$req->bindParam(':sex', $player->getSex(), PDO::PARAM_STR);
 		$req->bindParam(':avatarUrl', $player->getAvatar(), PDO::PARAM_STR);
-		$req->bindParam(':inscriptionDate', $player->getInscriptionDate(), PDO::PARAM_STR);
-		$req->execute() or die(print_r($req->errorInfo()));
+		$req->bindParam(':inscriptionDate', $player->getInscriptionDate(), PDO::PARAM_STR);		
+		$req->execute();
 		$req->closeCursor();
+
 	}
 /*
 	//Permet de delete un joueur donné en paramètre, de la bdd.

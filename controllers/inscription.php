@@ -46,11 +46,11 @@
 		$newPlayer = new Player($infoForm);
 
 		//Add the player to the database
-		$playerManager->add($newPlayer);
-
-		//Confirmation message
-		$view->successMessage();
-		
+		if($playerManager->add($newPlayer))
+			//Confirmation message
+			$view->successMessage();
+		else
+			$view->errorMessageDuplicatePlayer();
 	}
 
 	$viewG->endPage();
