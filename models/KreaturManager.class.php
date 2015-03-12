@@ -73,20 +73,29 @@ class KreaturManager{
 		$query->closeCursor();
 
 		return $kreaturs;
-	}
+	}*/
 
-	//Permet de lister toute les kreaturs d'un joueur passé en paramètre
-	public function getListKreatur(Joueur $joueur){
-		$kreatur = array();
-		$req = $this->_db->query('SELECT id, nom, espece, couleur, age, proprietaire, sexe FROM Kreatur WHERE proprietaire = \''.$joueur->getPseudo().'\' ORDER BY nom');
+	//List all kreaturs of one player
+	/*SELECT kreatur.id, kreatur.name, species, color, age, player.pseudo, kreatur.sex FROM kreatur JOIN player ON player.id = idOwner WHERE pseudo = 'fifi' ORDER BY kreatur.name;*/
+	public function getListKreatur(Player $player){
+
+		$aKreatur = array();
+		$req = $this->_db->query('SELECT kreatur.id, kreatur.name, species, color, age, player.pseudo, kreatur.sex FROM kreatur JOIN player ON player.id = idOwner WHERE pseudo = \''.$player->getPseudo().'\' ORDER BY kreatur.name');
 		while ($donnees = $req->fetch(PDO::FETCH_ASSOC)) {
-			$kreaturs[] = new Kreatur($donnees);
+			//Change the name of field pseudo for player. It need to be owner, or the function hydrates will not work on Kreatur contructor
+			$aKreatur['id'] = $donnees['id'];
+			$aKreatur['name'] = $donnees['name'];
+			$aKreatur['species'] = $donnees['species'];
+			$aKreatur['color'] = $donnees['color'];
+			$aKreatur['age'] = $donnees['age'];
+			$aKreatur['owner'] = $donnees['pseudo'];
+			$aKreatur['sex'] = $donnees['sex'];
+			$kreaturs[] = new Kreatur($aKreatur);
 		}
 		$req->closeCursor();
-
 		return $kreaturs;
 	}
-
+/*
 	//Permet d'éditer les informations d'une kreatur
 	public function update(Kreatur $kreatur){
 

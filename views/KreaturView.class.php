@@ -35,20 +35,30 @@ class KreaturView{
 		
 	}
 
-	public function displayKreatur($kreatur, $urlPicture){
+	public function showPicture($species, $color){
+		//faire les ifs etc pour afficher l'image correspondante
+		return 'http://www.metaroid.com/images/data/icone-pioupiou.jpg';
+	}
 
-		$html = '';
-			$html .= '<div class="CaseDragon">';
+	public function displayKreatur($tabKreatur){
 
-			$html .= '<p> Kreatur : '.$kreatur->getName() .' <br/>
-						Espece : '.$kreatur->getSpecies().' <br/>
-						Couleur : '.$kreatur->getColor().' <br/>
-						Age : '.$kreatur->getAge().' ans <br/>
-						Sexe : '.$kreatur->getSex().' <br/>
-						Propriétaire : '.$kreatur->getOwner().'
-					</p>';
+		$html = '<div class="row" data-equalizer>';
+			foreach ($tabKreatur as $kreaturs => $kreatur) {
+				$picture = $this->showPicture($kreatur->getSpecies(), $kreatur->getColor());
+			
+				$html .= '<div class="large-4 medium-4 small-4 columns panel" data-equalizer-watch>';
+				$html .='<img src="'.$picture.'">';
+				$html .= '<p> Kreatur : '.$kreatur->getName() .' <br/>
+							Espece : '.$kreatur->getSpecies().' <br/>
+							Couleur : '.$kreatur->getColor().' <br/>
+							Age : '.$kreatur->getAge().' ans <br/>
+							Sexe : '.$kreatur->getSex().' <br/>
+							Propriétaire : '.$kreatur->getOwner().'
+						</p>';
 
-			$html .= '</div>';	
+				$html .= '</div>';	
+			}
+		$html .= '</div>';
 		
 		echo $html;
 	}

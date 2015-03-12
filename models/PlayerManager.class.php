@@ -51,19 +51,19 @@ class PlayerManager{
 		$req->closeCursor();
 	}
 
-
-	//Permet de récupérer un joueur en fonction de son pseudo (return un tableau)
-	public function getJoueur($pseudo){
+*/
+	//get a player by his name/pseudo
+	public function getPlayer($pseudo){
 		$pseudo = (String) $pseudo;
-		$joueur = array();
-		$req = $this->_db->query('SELECT id, pseudo, mdp, mail, dateDeNaissance, sexe, avatar, dateInscription FROM Joueur WHERE pseudo = \''.$pseudo.'\' ');
+		$player = array();
+		$req = $this->_db->query('SELECT id, pseudo, pwd, mail, birthdate, sex, avatarUrl, inscriptionDate FROM player WHERE pseudo = \''.$pseudo.'\' ');
 		while ($donnees = $req->fetch(PDO::FETCH_ASSOC)){
-			$joueurs = new Joueur($donnees);
+			$players = new Player($donnees);
 		}
 		$req->closeCursor();
-		return $joueurs;
+		return $players;
 	}
-
+/*
 	//Permet de lister tous les joueurs en bdd
 	public function getList(){
 

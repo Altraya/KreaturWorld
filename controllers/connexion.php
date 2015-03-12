@@ -5,8 +5,6 @@
 		Author : Karakayn
 	*/
 
-	session_start();
-
 	require_once('./views/GeneralView.class.php');
 	require_once('./views/InscriptionView.class.php');
 

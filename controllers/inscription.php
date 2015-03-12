@@ -45,12 +45,29 @@
 		//Create a new player with information on form
 		$newPlayer = new Player($infoForm);
 
-		//Add the player to the database
-		if($playerManager->add($newPlayer))
+		//search if the player exist with this pseudo
+		if(){
+			//Add the player to the database
+			$playerManager->add($newPlayer))
 			//Confirmation message
 			$view->successMessage();
-		else
+		
+			//table who countain informations about player
+			$infoPlayer = array();
+
+			//verif if the player exist and return his id (+pseudo and pass)
+			$infoPlayer = $playerManager->verifConnexion($infoForm["pseudo"], $infoForm["pwd"]);
+
+			//if the player exist : create the session variable
+			if($infoPlayer != NULL){
+				$_SESSION['playersId'] = $infoPlayer['id'];
+				$_SESSION['playersName'] = $infoPlayer['pseudo'];
+			}else{
+				$view->errorMessage();
+			}
+		}else{
 			$view->errorMessageDuplicatePlayer();
+		}
 	}
 
 	$viewG->endPage();

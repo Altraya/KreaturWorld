@@ -7,6 +7,7 @@ class GeneralView{
 	}
 
 	public function header($pageTitle){
+		session_start();
 		$html = "";
 		$html.= '
 		<!doctype html>
@@ -88,7 +89,7 @@ class GeneralView{
 					        <a href="#">Antre</a>
 					        <ul class="dropdown">
 					          	<li><a href="antre.php">Kreaturs</a></li>
-					          	<li><a href="#">Actions</a></li>
+					          	<li><a href="action.php">Actions</a></li>
 					          	<li><a href="#">Cimetière</a></li>
 					        </ul>
 			      		</li>
