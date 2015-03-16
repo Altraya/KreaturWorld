@@ -120,14 +120,14 @@ class InscriptionView{
 			<hr/>
 		    	<div class="large-6 columns">
 					<p>
-						Mot de passe oublié ?
+						<center><a href="#">Mot de passe oublié ?</a></center>
 					</p>
 				</div>
 
 
 				<div class="large-6 columns">
         			<p>
-						S\'inscrire.
+						<center><a href="inscription.php">S\'inscrire.</a></center>
 					</p>
 				</div>
 			</div>
@@ -166,22 +166,35 @@ class InscriptionView{
 	}
 
 	public function successMessage(){
-		$html = 'Félicitation vous êtes désormais inscrit !';
+		$html = '
+				<div class="panel">
+					Félicitation vous êtes désormais inscrit !
+				</div>';
 		echo($html);
 	}
 
 	public function errorMessage(){
-		$html = 'Vous avez saisi un mauvais identifiant ou mot de passe.';
+		$html = '
+				<div class="panel">
+					Vous avez saisi un mauvais identifiant ou mot de passe.
+				</div>';
 		echo($html);
 	}
 
 	public function errorMessageDuplicatePlayer(){
-		$html = 'Vous ne pouvez pas vous inscrire avec ce pseudo, car il existe déjà.';
+		$html = '
+				<div class="panel">
+					Vous ne pouvez pas vous inscrire avec ce pseudo, car il existe déjà.
+				</div>';
 		echo($html);
 	}
 
 	public function successDeconnexion(){
-		$html = 'Vous avez bien été déconnecté !';
+		$html = '
+				<div class="panel">
+					Vous avez bien été déconnecté !
+				</div>
+				';
 		echo($html);
 	}
 

@@ -13,7 +13,6 @@
 	
 	$viewG->header("KreaturWorld - Connexion");
 	$viewG->topBar();
-	$viewG->menuBar();
 
 	//if the button of the form is not set
 	if(!isset($_POST['buttonConnexion'])){

@@ -13,7 +13,6 @@
 	
 	$viewG->header("KreaturWorld - Deconnexion");
 	$viewG->topBar();
-	$viewG->menuBar();
 
 		//destroy session variable => deconnexion
 		$_SESSION = array();

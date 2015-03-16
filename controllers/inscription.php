@@ -5,8 +5,6 @@
 		Author : Karakayn
 	*/
 
-	session_start();
-
 	require_once('./views/GeneralView.class.php');
 	require_once('./views/InscriptionView.class.php');
 
@@ -15,7 +13,6 @@
 	
 	$viewG->header("KreaturWorld - Inscription");
 	$viewG->topBar();
-	$viewG->menuBar();
 
 	//if the button of the form is not set
 	if(!isset($_POST['buttonInscription'])){
@@ -45,10 +42,14 @@
 		//Create a new player with information on form
 		$newPlayer = new Player($infoForm);
 
+		$verifPlayer = $playerManager->getPlayer($infoForm['pseudo']);
+		$playerIdExist = (int) $verifPlayer->getId(); 
+
 		//search if the player exist with this pseudo
-		if(){
+		if($playerIdExist == 0){
+			
 			//Add the player to the database
-			$playerManager->add($newPlayer))
+			$playerManager->add($newPlayer);
 			//Confirmation message
 			$view->successMessage();
 		

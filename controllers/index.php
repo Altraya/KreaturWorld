@@ -7,6 +7,5 @@
 
 	$view->header("KreaturWorld - Accueil");
 		$view->topBar();
-		$view->menuBar();
 	$view->endPage();
 ?>

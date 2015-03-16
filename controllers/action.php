@@ -12,7 +12,6 @@
 	
 	$viewG->header("KreaturWorld -  Actions");
 	$viewG->topBar();
-	$viewG->menuBar();
 
 	$viewG->section();
 			

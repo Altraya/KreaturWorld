@@ -17,11 +17,9 @@ class GeneralView{
 				<title>'.$pageTitle.'</title>
 				<link rel="stylesheet" href="css/foundation.css">
 				<link rel="stylesheet" href="css/normalize.css">
+				<link rel="stylesheet" href="css/hack.css">
 				<script src="js/vendor/modernizr.js"></script>
 
-				<!--[if lt IE 9]>
-				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-				<![endif]-->
 			</head>
 		<body>';
 
@@ -31,96 +29,142 @@ class GeneralView{
 	//pin up the topBar of the site
 	public function topBar(){
 		$html = "";
-		$html.='
+		$html.='	
+		<div class="contain-to-grid sticky">		  	
 			<nav class="top-bar" data-topbar role="navigation">
-			  	<ul class="title-area">
-			    	<li class="name">
-			      		<h1><a href="index.php">KreaturWorld</a></h1>
-			    	</li>
-			     	<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-			    	<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-			  	</ul>
+				<ul class="title-area">
+					<li class="name">
+						<h1><a href="index.php">KreaturWorld</a></h1>
+					</li>
+					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
 
-			  	<section class="top-bar-section">
-			  	';
-			  	//if the player is connected : show deconnexion
+				<section class="top-bar-section">
+					<!-- Right Nav Section -->
+					<ul class="right">
+						
+						<li class="has-dropdown">
+							<a href="#">Joueur</a>
+							<ul class="dropdown">
+					  			<li><a href="#">Bureau</a></li>
+							  	<li><a href="#">Guilde</a></li>
+							  	<li><a href="#">Quest</a></li>
+							  	<li><a href="#">Faction</a></li>
+							</ul>
+						</li>
+
+						<li class="has-dropdown">
+							<a href="#">Antre</a>
+							<ul class="dropdown">
+							  	<li><a href="antre.php">Kreaturs</a></li>
+							  	<li><a href="action.php">Actions</a></li>
+							  	<li><a href="#">Cimetière</a></li>
+							</ul>
+						</li>
+
+						<li class="has-dropdown">
+							<a href="#">Communauté</a>
+							<ul class="dropdown">
+							  	<li><a href="#">News</a></li>
+							  	<li><a href="#">Forum</a></li>
+							  	<li><a href="#">Classement</a></li>
+							</ul>
+						</li>
+
+						<li class="has-dropdown">
+							<a href="#">Bataille</a>
+							<ul class="dropdown">
+							  	<li><a href="#">En cours</a></li>
+							  	<li><a href="#">MAP</a></li>
+							</ul>
+						</li>
+
+						<li class="has-dropdown">
+							<a href="#">Boutique</a>
+							<ul class="dropdown">
+							  	<li><a href="#">Marché</a></li>
+							  	<li><a href="#">Antre d\'Hilrad</a></li>
+							</ul>
+						</li>
+						
+				';
+				//if the player is connected : show deconnexion
 			  	if(isset($_SESSION['playersId'])){
-			  		$html.='
-			    	<!-- Right Nav Section -->
-			    	<ul class="right">			   
-			      		<li class="active"><a href="deconnexion.php">Deconnexion</a></li>
-			   	 	</ul>
+			  		$html.='				    					   
+				      	<li class="active"><a href="deconnexion.php">Deconnexion</a></li>				   	 	
 			  		';
-			  	//else show connexion
-			  	}else{
-		$html.='
-			    <!-- Right Nav Section -->
-			    	<ul class="right">			   
-			      		<li class="active"><a href="connexion.php">Connexion</a></li>
-			   	 	</ul>';
+				//else show connexion
+				}else{
+					$html.='	   
+				      	<li class="active"><a href="connexion.php">Connexion</a></li>
+			   	 	';
 			   	}
-		$html.='
-			  	</section>
+$html.='
+					</ul>
+					
+				</section>
 			</nav>
-		';
+		</div>
+			  	';
+
 		echo($html);
 	}
 
+//not use
 	public function menuBar(){
 		$html = "";
-		$html.='
-			<nav class="top-bar" data-topbar role="navigation" data-options="is_hover: true">
+		
+		$html.='	    
 
-			  	<section class="top-bar-section">
-			    <!-- Left Nav Section -->
-			    	<ul class="left">	
+		<!-- Left Nav Section -->
+		<div class="large-8 medium-8 small-8 columns">
+			<ul>	
+				<li class="has-dropdown">
+					<a href="#">Joueur</a>
+					<ul class="dropdown">
+					  	<li><a href="#">Bureau</a></li>
+					  	<li><a href="#">Guilde</a></li>
+					  	<li><a href="#">Quest</a></li>
+					  	<li><a href="#">Faction</a></li>
+					</ul>
+				</li>
 
-			    		<li class="has-dropdown">
-					        <a href="#">Joueur</a>
-					        <ul class="dropdown">
-					          	<li><a href="#">Bureau</a></li>
-					          	<li><a href="#">Guilde</a></li>
-					          	<li><a href="#">Quest</a></li>
-					          	<li><a href="#">Faction</a></li>
-					        </ul>
-			      		</li>
+				<li class="has-dropdown">
+					<a href="#">Antre</a>
+					<ul class="dropdown">
+					  	<li><a href="antre.php">Kreaturs</a></li>
+					  	<li><a href="action.php">Actions</a></li>
+					  	<li><a href="#">Cimetière</a></li>
+					</ul>
+				</li>
 
-			    		<li class="has-dropdown">
-					        <a href="#">Antre</a>
-					        <ul class="dropdown">
-					          	<li><a href="antre.php">Kreaturs</a></li>
-					          	<li><a href="action.php">Actions</a></li>
-					          	<li><a href="#">Cimetière</a></li>
-					        </ul>
-			      		</li>
+				<li class="has-dropdown">
+					<a href="#">Communauté</a>
+					<ul class="dropdown">
+					  	<li><a href="#">News</a></li>
+					  	<li><a href="#">Forum</a></li>
+					  	<li><a href="#">Classement</a></li>
+					</ul>
+				</li>
 
-						<li class="has-dropdown">
-					        <a href="#">Communauté</a>
-					        <ul class="dropdown">
-					          	<li><a href="#">News</a></li>
-					          	<li><a href="#">Forum</a></li>
-					          	<li><a href="#">Classement</a></li>
-					        </ul>
-			      		</li>
+				<li class="has-dropdown">
+					<a href="#">Bataille</a>
+					<ul class="dropdown">
+					  	<li><a href="#">En cours</a></li>
+					  	<li><a href="#">MAP</a></li>
+					</ul>
+				</li>
 
-						<li class="has-dropdown">
-					        <a href="#">Bataille</a>
-					        <ul class="dropdown">
-					          	<li><a href="#">En cours</a></li>
-					          	<li><a href="#">MAP</a></li>
-					        </ul>
-			      		</li>
-
-			      		<li class="has-dropdown">
-					        <a href="#">Boutique</a>
-					        <ul class="dropdown">
-					          	<li><a href="#">Marché</a></li>
-					          	<li><a href="#">Antre d\'Hilrad</a></li>
-					        </ul>
-			      		</li>
-			   	 	</ul>
-			  	</section>
-			</nav>
+				<li class="has-dropdown">
+					<a href="#">Boutique</a>
+					<ul class="dropdown">
+					  	<li><a href="#">Marché</a></li>
+					  	<li><a href="#">Antre d\'Hilrad</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 		';
 		echo($html);
 	}
@@ -182,9 +226,11 @@ class GeneralView{
 
 	public function notConnected(){
 		echo'
+		<div class="panel">
 			<p> Vous n\'êtes pas connecté vous ne pouvez donc pas accéder à cette partie. <br/>
 				<a href="inscription.php">Inscrivez vous</a> ou <a href="connexion.php">connectez vous</a> pour y accéder
 			</p>
+		</div>
 		';
 	}
 }
