@@ -36,16 +36,55 @@ class KreaturView{
 	}
 
 	public function showPicture($species, $color){
-		//faire les ifs etc pour afficher l'image correspondante
-		return 'http://www.metaroid.com/images/data/icone-pioupiou.jpg';
+		switch ($species) {
+			case 'Dragon':
+				switch ($color) {
+					case 'Noir':
+						$src = 'http://www.karakayn.com/KreaturWorld/images/drake_noir.png';
+						break;
+					case 'Rouge':
+						$src = 'http://www.karakayn.com/KreaturWorld/images/drake_rouge.png';
+						break;
+					case 'Bleu':
+						$src = 'http://www.karakayn.com/KreaturWorld/images/drake_bleu.png';
+						break;
+					default:
+						//Couleur non autorisé
+						$src = 'http://www.metaroid.com/images/data/icone-pioupiou.jpg';
+						break;
+				}
+				
+				break;
+			case 'Leviathan':
+				switch ($color) {
+					case 'Noir':
+						$src = 'http://auto.img.v4.skyrock.net/9729/74579729/pics/3075730683_1_3_iieT0KGE.jpg';
+						break;
+					case 'Rouge':
+						$src = 'http://www.pokemontrash.com/heartgold-soulsilver/images/leviator_rouge/leviator_rouge_fanart.PNG';
+						break;
+					case 'Bleu':
+						$src = 'http://i10.servimg.com/u/f10/10/07/21/67/leviat10.jpg';
+						break;
+					default:
+						$src = 'http://www.metaroid.com/images/data/icone-pioupiou.jpg';
+						break;
+				}
+				break;
+			default:
+				$src = 'http://www.metaroid.com/images/data/icone-pioupiou.jpg';
+				break;
+		}
+		return $src;
 	}
 
+	//show the tab with picture and kreatur's informations
 	public function displayKreatur($tabKreatur){
 
 		$html = '<div class="row" data-equalizer>';
 			foreach ($tabKreatur as $kreaturs => $kreatur) {
 				$picture = $this->showPicture($kreatur->getSpecies(), $kreatur->getColor());
-			
+
 				$html .= '<div class="large-4 medium-4 small-4 columns panel" data-equalizer-watch>';
 				$html .='<img src="'.$picture.'">';
 				$html .= '<p> Kreatur : '.$kreatur->getName() .' <br/>
