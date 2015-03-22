@@ -9,6 +9,7 @@
 
 	$view->header("KreaturWorld - FAQ");
 		$view->topBar();
+		$FaqView->intro();
 		$FaqView->map();
 		$FaqView->guild();
 	$view->endPage();

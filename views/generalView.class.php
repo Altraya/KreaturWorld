@@ -47,7 +47,7 @@ class GeneralView{
 						<li class="has-dropdown">
 							<a href="#">Joueur</a>
 							<ul class="dropdown">
-					  			<li><a href="#">Bureau</a></li>
+					  			<li><a href="home.php">Bureau</a></li>
 							  	<li><a href="#">Guilde</a></li>
 							  	<li><a href="#">Quest</a></li>
 							  	<li><a href="#">Faction</a></li>
