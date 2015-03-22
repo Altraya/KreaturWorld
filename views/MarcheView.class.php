@@ -14,10 +14,10 @@ class MarcheView{
 			<div class="small-10 large-10 columns">
 				<h1>Le marché</h1>
 				<hr/>
-				<p>Vous trouverez ici tous les articles dont vous avez besoin pour vous occuper de vos kreaturs.</p>
+				<center><p>Vous trouverez ici tous les articles dont vous avez besoin pour vous occuper de vos kreaturs.</p></center>
 			</div>
 			<div class="small-2 large-2 columns">
-				<img src="img/coffreOr.jpg" alt="Coffre en or"/>
+				<img src="img/coffreOr.png" alt="Coffre en or"/>
 			</div>
 		</div>
 		';
