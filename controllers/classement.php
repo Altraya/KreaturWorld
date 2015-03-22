@@ -9,5 +9,8 @@
 
 	$view->header("KreaturWorld - Classement");
 		$view->topBar();
+
+		$ClassementView->intro();
+		$ClassementView->noClassement();
 	$view->endPage();
 ?>
