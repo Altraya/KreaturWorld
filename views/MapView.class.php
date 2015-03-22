@@ -7,7 +7,6 @@ class MAPView{
 	}
 
 	public function nope(){
-		session_start();
 		$html = "";
 		$html.= '
 

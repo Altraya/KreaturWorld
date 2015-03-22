@@ -7,7 +7,6 @@ class ClassementView{
 	}
 
 	public function nope(){
-		session_start();
 		$html = "";
 		$html.= '
 

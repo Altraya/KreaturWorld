@@ -9,5 +9,8 @@
 
 	$view->header("KreaturWorld - Marché");
 		$view->topBar();
+		$MarcheView->intro();
+
+		$MarcheView->noArticles();
 	$view->endPage();
 ?>

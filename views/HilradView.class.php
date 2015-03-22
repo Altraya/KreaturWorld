@@ -7,7 +7,7 @@ class HilradView{
 	}
 
 	public function nope(){
-		session_start();
+
 		$html = "";
 		$html.= '
 
