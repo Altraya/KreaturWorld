@@ -68,23 +68,24 @@ class GeneralView{
 							<ul class="dropdown">
 							  	<li><a href="#">News</a></li>
 							  	<li><a href="#">Forum</a></li>
-							  	<li><a href="#">Classement</a></li>
+							  	<li><a href="classement.php">Classement</a></li>
+							  	<li><a href="FAQ.php">FAQ</a></li>
 							</ul>
 						</li>
 
 						<li class="has-dropdown">
 							<a href="#">Bataille</a>
 							<ul class="dropdown">
-							  	<li><a href="#">En cours</a></li>
-							  	<li><a href="#">MAP</a></li>
+							  	<li><a href="bataille.php">En cours</a></li>
+							  	<li><a href="map.php">MAP</a></li>
 							</ul>
 						</li>
 
 						<li class="has-dropdown">
 							<a href="#">Boutique</a>
 							<ul class="dropdown">
-							  	<li><a href="#">Marché</a></li>
-							  	<li><a href="#">Antre d\'Hilrad</a></li>
+							  	<li><a href="marche.php">Marché</a></li>
+							  	<li><a href="hilrad.php">Antre d\'Hilrad</a></li>
 							</ul>
 						</li>
 						
