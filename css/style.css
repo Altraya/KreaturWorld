@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "dragon";
+    src : url("../polices/dragonslapper.ttf");
+}
+
+html {
+	color: white;
+}
+
+body {
+	margin:0;
+	padding:0;
+	background: url("../img/accueilBackground.jpg") no-repeat fixed center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+#logo {
+	width: 30% ;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#FormCo,#FormInscri {
+    width: auto;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: #cbcbcb;
+	border-radius: 1%;
+	background-color: #1a1d22;
+	margin-bottom: 20px;
+    margin-left: auto;
+	color: #cbcbcb;
+    float: right;
+
+}
+
+h2 {
+	color: #cbcbcb;
+}
+
+
+div,input,h2,.button {
+    font-family: "dragon";
+}
+
+
+option,label {
+    color: #cbcbcb;
+}
+
+select,select:hover {
+    background-color: #3a3434;
+}
+
+.row {
+    float: right;
+    padding-right: 25px;
+}
+.button {
+    font-size: 100%
+}

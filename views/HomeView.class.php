@@ -12,7 +12,7 @@ class HomeView{
 		$html.= '
 		<div class="row">
 			<div class="small-12 large-12 columns">
-				<h1>Actualités</h1>
+				<h1>Actualites</h1>
 				<hr/>
 			</div>
 			<div class="small-8 large-8 columns">

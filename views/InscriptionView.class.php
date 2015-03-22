@@ -76,7 +76,6 @@ class InscriptionView{
 				</div>
 			</div>
 
-			<br/>
 			<div class="row">
 				<div class="large-12 columns">
 					<button name="buttonInscription" form="inscriptionForm" class="button secondary expand" type="submit">M\'inscrire</button>
@@ -147,9 +146,11 @@ class InscriptionView{
 		$html = '';
 
 		$html.='
-			<center>
-				<h1>Inscription</h1>
-			</center>
+			<div class="row">
+				<div class="small-12 large-12 columns">
+					<h1>Inscription</h1>
+				</div>
+			</div>
 		';
 		echo($html);
 	}
@@ -158,9 +159,11 @@ class InscriptionView{
 		$html = '';
 
 		$html.='
-			<center>
-				<h1>Connexion</h1>
-			</center>
+			<div class="row">
+				<div class="small-12 large-12 columns">
+					<h1>Connexion</h1>
+				</div>
+			</div>
 		';
 		echo($html);
 	}
