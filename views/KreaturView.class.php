@@ -44,6 +44,50 @@ class KreaturView{
 		
 	}
 
+	//Display informations about kreatur and check for reproduction
+	public function kreaturForReproduction($tabKreatur){
+		$html = "";
+
+		$html.='		
+		<form data-abide id="reproductionForm" action="reproduction.php" method="post">
+			<div class="row">
+				<div class="small-12 large-12 columns">';
+			$html.= '<table>';
+			foreach ($tabKreatur as $kreaturs => $kreatur) {
+				$html .= '
+						<tr>
+						   <td>'. $kreatur->getName() .'</td>
+						   <td>'. $kreatur->getSpecies() .'</td>
+						   <td>'. $kreatur->getColor() .'</td>
+						   <td>'. $kreatur->getAge() .'</td>
+						   <td>'. $kreatur->getSex() .'</td>
+						   <td><input type="checkbox" name="tabKreatur" value="'.$kreatur->getId().'"></td>
+						</tr>
+						';
+			}
+			$html .= '</table>';
+			$html .= '
+
+				</div>
+			</div>
+			';
+			$html.='
+			<div class="row">
+				<div class="large-12 columns">
+					<button name="buttonAccouplement" form="reproductionForm" class="button secondary expand" type="submit">Accouplement</button>
+				</div>
+			</div>
+			';
+			$html .= '
+
+		</form>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="js/test.js"></script>
+		';
+		echo($html);
+	}
+
+
 	public function showPicture($species, $color){
 		switch ($species) {
 			case 'Dragon':
