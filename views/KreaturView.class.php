@@ -14,24 +14,35 @@ class KreaturView{
 	}
 
 	//Display in a html table all information about Kreaturs + edit and delete button
-	public function	kreaturOnTable($kreatur) {
+	public function	kreaturOnTable($tabKreatur) {
+		$html = "";
 
-		$html = '<table>';
+		$html.='		
+		<div class="row">
+			<div class="small-12 large-12 columns">';
+		$html.= '<table>';
+		foreach ($tabKreatur as $kreaturs => $kreatur) {
 			$html .= '
-			<tr>
-			   <td>'. $kreatur->getId() .'</td>
-			   <td>'. $kreatur->getName() .'</td>
-			   <td>'. $kreatur->getSpecies() .'</td>
-			   <td>'. $kreatur->getColor() .'</td>
-			   <td>'. $kreatur->getAge() .'</td>
-			   <td>'. $kreatur->getOwner() .'</td>
-			   <td>'. $kreatur->getSex() .'</td>
-			   <td><a href="modifier.php"><img src="http://www.cesbio.ups-tlse.fr/data_all/images/16x16/edit.png" alt="Bouton edit"/>Edit</td>
-			   <td><a href="supprimer.php"><img src="http://www.sportrelax-vicemil.cz/en/css/DeleteIcon.gif" alt="Bouton delete"/>Delete</td>
-			</tr>
-			';
+					<tr>
+					   <td>'. $kreatur->getId() .'</td>
+					   <td>'. $kreatur->getName() .'</td>
+					   <td>'. $kreatur->getSpecies() .'</td>
+					   <td>'. $kreatur->getColor() .'</td>
+					   <td>'. $kreatur->getAge() .'</td>
+					   <td>'. $kreatur->getOwner() .'</td>
+					   <td>'. $kreatur->getSex() .'</td>
+					   <td><a href="modifier.php"><img src="http://www.cesbio.ups-tlse.fr/data_all/images/16x16/edit.png" alt="Bouton edit"/>Edit</td>
+					   <td><a href="supprimer.php"><img src="http://www.sportrelax-vicemil.cz/en/css/DeleteIcon.gif" alt="Bouton delete"/>Delete</td>
+					</tr>
+					';
+		}
 		$html .= '</table>';
-		echo $html;
+
+		$html .= '
+			</div>
+		</div>
+		';
+		echo($html);
 		
 	}
 

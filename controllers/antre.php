@@ -13,8 +13,6 @@
 	$viewG->header("KreaturWorld - Antre de vos Kréaturs");
 	$viewG->topBar();
 
-	$viewG->section();
-
 		//if the player is not connected -> error message
 		//if($_SESSION['playersId'] == NULL){
 		if(!isset($_SESSION['playersId'])){
@@ -39,12 +37,9 @@
 			$player = $playerManager->getPlayer($_SESSION['playersName']);
 
 			//affiche les dragons du joueur
-			$viewK->displayKreatur($manager->getListKreatur($player), "none");
+			$viewK->displayKreatur($manager->getListKreatur($player));
 		}
-			
-		$viewG->endParagraph();
 
-	$viewG->endSection();
 
 	$viewG->endPage();
 
