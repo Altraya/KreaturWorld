@@ -1,37 +1,38 @@
 <?php
-/* marche view */
+/* Cemetery view */
 
-class MarcheView{
+class CemeteryView{
 
 	public function __construct(){
 	}
 
-	//title and description of the marche
+	//title and description of the map
 	public function intro(){
 		$html = "";
 		$html.= '
 		<div class="row">
 			<div class="small-10 large-10 columns">
-				<h1>Le marche</h1>
+				<h1>Cimetiere</h1>
 				<hr/>
-				<center><p>Vous trouverez ici tous les articles dont vous avez besoin pour vous occuper de vos kreaturs.</p></center>
+				<center><p>Vous trouverez ici toutes vos Kreaturs perdues au combat.</p></center>
 			</div>
 			<div class="small-2 large-2 columns">
-				<img src="img/coffreOr.png" alt="Coffre en or"/>
+				<img src="img/tombe.jpg" alt="Tombe"/>				
 			</div>
 		</div>
+
 		';
 
 		echo($html);
 	}
 
-	public function noArticles(){
+	public function noKreatur(){
 		$html = "";
 		$html .= '
 		<div class="row">
 			<div class="small-12 large-12 columns">
 				<div class="panel">
-					<p> Il n\'y a actuellement aucun article de disponible ! Revenez plus tard !</p>
+					<p> Il n\'y a actuellement aucune de vos Kreaturs au cimetière.</p>
 				</div>
 			</div>
 		</div>

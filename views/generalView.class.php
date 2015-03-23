@@ -59,7 +59,7 @@ class GeneralView{
 							<ul class="dropdown">
 							  	<li><a href="antre.php">Kreaturs</a></li>
 							  	<li><a href="action.php">Actions</a></li>
-							  	<li><a href="#">Cimetière</a></li>
+							  	<li><a href="cimetiere.php">Cimetière</a></li>
 							</ul>
 						</li>
 

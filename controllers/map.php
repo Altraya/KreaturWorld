@@ -9,5 +9,9 @@
 
 	$view->header("KreaturWorld - MAP");
 		$view->topBar();
+		$MapView->intro();
+		$MapView->noKreaturOnleaving();
+		$MapView->canvas();
+		
 	$view->endPage();
 ?>

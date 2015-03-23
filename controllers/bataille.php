@@ -9,5 +9,7 @@
 
 	$view->header("KreaturWorld - Bataille");
 		$view->topBar();
+		$BatailleView->intro();
+		$BatailleView->noKreaturOnleaving();
 	$view->endPage();
 ?>
