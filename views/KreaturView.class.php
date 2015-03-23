@@ -24,15 +24,13 @@ class KreaturView{
 		foreach ($tabKreatur as $kreaturs => $kreatur) {
 			$html .= '
 					<tr>
-					   <td>'. $kreatur->getId() .'</td>
 					   <td>'. $kreatur->getName() .'</td>
 					   <td>'. $kreatur->getSpecies() .'</td>
 					   <td>'. $kreatur->getColor() .'</td>
 					   <td>'. $kreatur->getAge() .'</td>
-					   <td>'. $kreatur->getOwner() .'</td>
 					   <td>'. $kreatur->getSex() .'</td>
-					   <td><a href="modifier.php"><img src="http://www.cesbio.ups-tlse.fr/data_all/images/16x16/edit.png" alt="Bouton edit"/>Edit</td>
-					   <td><a href="supprimer.php"><img src="http://www.sportrelax-vicemil.cz/en/css/DeleteIcon.gif" alt="Bouton delete"/>Delete</td>
+					   <td><a href="reproduction.php"><img src="img/icone male-femelle-mini.png" alt="Reproduction"/></td>
+					   <td><a href="exploration.php"><img src="img/ile volante-mini.jpg" alt="Ile volante"/></td>
 					</tr>
 					';
 		}
