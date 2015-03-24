@@ -40,9 +40,10 @@ class MAPView{
 		$html.= '
 		<div class="row">
 			<div class="small-12 large-12 columns">
-				<canvas id="map" width="900" height="400"></canvas>
+				<canvas id="map" onLoad="drawCase()" width="900" height="400"></canvas>
 			</div>
 		</div>
+		<script src="js/map.js" type="text/javascript"></script>
 		';
 		echo($html);
 	}

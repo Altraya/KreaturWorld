@@ -18,6 +18,7 @@ class HomeView{
 			<div class="small-8 large-8 columns">
 				<center><p>Qu\'est ce qui ce trame en Altraya ?</p></center>
 				<hr/>
+				<p>- Ajout d\'une fonctionnalité d\'élevage : la reproduction</p>
 			</div>
 			<div class="small-4 large-4 columns">
 				<a class="twitter-timeline" href="https://twitter.com/Karakayne" data-widget-id="579726233640005632">Tweets de @Karakayne</a>
