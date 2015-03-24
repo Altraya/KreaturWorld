@@ -40,5 +40,39 @@ class ReproductionView{
 		echo($html);
 	}
 
+
+	public function errorNotSameSpecies()
+	{
+		$html = "";
+		$html .= '
+			<div class="panel">
+				Erreur : Vous devez choisir deux individus de la même espèce pour les faire s\'accoupler !
+			</div>
+		';
+		echo($html);
+	}
+
+	public function errorSameSex()
+	{
+		$html = "";
+		$html .= '
+			<div class="panel">
+				Erreur : Vous devez choisir un individu mâle et femelle pour pouvoir les faire se reproduire !
+			</div>
+		';
+		echo($html);
+	}
+
+	//Success message when reproduction is successfull
+	public function babyWasBorn($babyKreatur)
+	{
+		$html = "";
+		$html .= '
+			<div class="panel">
+				Félicitation ! '.$babyKreatur->getName().' est né, il vous attend dans l\'antre !
+			</div>
+		';
+		echo($html);
+	}
 }
 ?>

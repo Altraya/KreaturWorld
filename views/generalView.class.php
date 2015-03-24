@@ -234,5 +234,23 @@ $html.='
 		</div>
 		';
 	}
+
+	//open div for class row and class large-12 columns
+	public function openRowMax()
+	{
+		$html = "";
+		$html .= '
+
+			<div class="row">
+				<div class="large-12 columns">
+		';
+		echo($html);
+	}
+
+	public function closeDiv()
+	{
+		$html = '</div>';
+		echo($html);
+	}
 }
 ?>

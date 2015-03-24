@@ -61,7 +61,7 @@ class KreaturView{
 						   <td>'. $kreatur->getColor() .'</td>
 						   <td>'. $kreatur->getAge() .'</td>
 						   <td>'. $kreatur->getSex() .'</td>
-						   <td><input type="checkbox" name="tabKreatur" value="'.$kreatur->getId().'"></td>
+						   <td><input type="checkbox" name="kreatur[]" value="'.$kreatur->getId().'"></td>
 						</tr>
 						';
 			}
@@ -81,8 +81,6 @@ class KreaturView{
 			$html .= '
 
 		</form>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="js/test.js"></script>
 		';
 		echo($html);
 	}
@@ -153,6 +151,24 @@ class KreaturView{
 		$html .= '</div>';
 		
 		echo $html;
+	}
+
+	public function errorNotSameSpecies()
+	{
+		$html = "";
+		$html .= '
+			Erreur : Vous devez choisir deux individus de la même espèce pour les faire s\'accoupler !
+		';
+		echo($html);
+	}
+
+	public function errorSameSex()
+	{
+		$html = "";
+		$html .= '
+			Erreur : Vous devez choisir un individu mâle et femelle pour pouvoir les faire se reproduire !
+		';
+		echo($html);
 	}
 
 }
