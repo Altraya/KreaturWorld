@@ -40,7 +40,7 @@ class ReproductionView{
 		echo($html);
 	}
 
-
+	//error when kreaturs have not the same species
 	public function errorNotSameSpecies()
 	{
 		$html = "";
@@ -52,12 +52,25 @@ class ReproductionView{
 		echo($html);
 	}
 
+	//error when kreaturs have the same sex
 	public function errorSameSex()
 	{
 		$html = "";
 		$html .= '
 			<div class="panel">
 				Erreur : Vous devez choisir un individu mâle et femelle pour pouvoir les faire se reproduire !
+			</div>
+		';
+		echo($html);
+	}
+
+	//error message => when age of kreaturs < 250 years
+	public function errorAge()
+	{
+		$html = "";
+		$html .= '
+			<div class="panel">
+				Erreur : Une de vos kreaturs n\'a pas l\'age requis ! Elles doivent avoir au moins 250 ans pour pouvoir se reproduire !
 			</div>
 		';
 		echo($html);
@@ -74,5 +87,6 @@ class ReproductionView{
 		';
 		echo($html);
 	}
+
 }
 ?>

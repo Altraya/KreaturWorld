@@ -53,52 +53,62 @@
     			$krea1 = $couple[0][0]; //acces to the first kreatur
     			$krea2 = $couple[1][0]; //acces to the second kreatur
 
-    			//CHECK sex
-    			//if the sex of the two participant is different : we need a baby / homosexuality is not acceptable here.
-    			$sexKrea1 = $krea1->getSex();
-    			$sexKrea2 = $krea2->getSex();
-    			//sexKrea1 != sexKrea2 dont work
-    			if(($sexKrea1 == 'Femelle' && $sexKrea2 == 'Male') || $sexKrea1 == 'Male' && $sexKrea2 == 'Femelle'/*strcasecmp($sexKrea1, $sexKrea2)*//*$sexKrea1 =! $sexKrea2*/)
-    			{	
-    				$speciesKrea1 = $krea1->getSpecies();
-    				$speciesKrea2 = $krea2->getSpecies();
-    				//CHECK species
-	    			//if the species of the two specimen match
-	    			if($speciesKrea1 == $speciesKrea2)
-	    			{
-	    				//verif species ok
-	    				//check the color for giving a color to the baby
-	    				$babyColor = checkColor($krea1, $krea2);
+    			//CHECK age
+    			//check if they have age to reproduce => 250 years
+    			$ageKrea1 = $krea1->getAge();
+    			$ageeKrea2 = $krea2->getAge();
 
-	    				//populate table with baby informations to create a new kreatur after
-						$baby['name'] = 'Wall-e'; //all the same name for baby
-						$baby['species'] = $krea1->getSpecies(); //take the species of his parent
-						$baby['color'] = $babyColor;
-						$baby['age'] = 0;
-						$baby['owner'] = $_SESSION['playersName']; //current player id
-						//1/2 chance to have a femelle or a male
-						$rand = rand(0,100);
-						if($rand <= 50)
-							$baby['sex'] = 'Femelle';
-						else
-							$baby['sex'] = 'Male';
+    			if($ageKrea1 >= 250 && $ageeKrea2 >= 250)
+    			{
+	    			//CHECK sex
+	    			//if the sex of the two participant is different : we need a baby / homosexuality is not acceptable here.
+	    			$sexKrea1 = $krea1->getSex();
+	    			$sexKrea2 = $krea2->getSex();
+	    			//sexKrea1 != sexKrea2 dont work
+	    			if(($sexKrea1 == 'Femelle' && $sexKrea2 == 'Male') || $sexKrea1 == 'Male' && $sexKrea2 == 'Femelle'/*strcasecmp($sexKrea1, $sexKrea2)*//*$sexKrea1 =! $sexKrea2*/)
+	    			{	
+	    				$speciesKrea1 = $krea1->getSpecies();
+	    				$speciesKrea2 = $krea2->getSpecies();
+	    				//CHECK species
+		    			//if the species of the two specimen match
+		    			if($speciesKrea1 == $speciesKrea2)
+		    			{
+		    				//verif species ok
+		    				//check the color for giving a color to the baby
+		    				$babyColor = checkColor($krea1, $krea2);
 
-						//Create a new kreatur object
-						$babyKreatur = new Kreatur($baby);
+		    				//populate table with baby informations to create a new kreatur after
+							$baby['name'] = 'Wall-e'; //all the same name for baby
+							$baby['species'] = $krea1->getSpecies(); //take the species of his parent
+							$baby['color'] = $babyColor;
+							$baby['age'] = 0;
+							$baby['owner'] = $_SESSION['playersName']; //current player id
+							//1/2 chance to have a femelle or a male
+							$rand = rand(0,100);
+							if($rand <= 50)
+								$baby['sex'] = 'Femelle';
+							else
+								$baby['sex'] = 'Male';
 
-						//add the new kreatur on database
-						$manager->add($babyKreatur, $_SESSION['playersId']);
+							//Create a new kreatur object
+							$babyKreatur = new Kreatur($baby);
 
-						//display a success message
-						$ReproductionView->babyWasBorn($babyKreatur);
-	    				
-	    			}else{
-	    				//error message : Can't do Hybrid : need to have 2 specimen of the same species
-	    				$ReproductionView->errorNotSameSpecies();
-	    			}
-	    		}else{
-	    			$ReproductionView->errorSameSex();
-	    		}
+							//add the new kreatur on database
+							$manager->add($babyKreatur, $_SESSION['playersId']);
+
+							//display a success message
+							$ReproductionView->babyWasBorn($babyKreatur);
+		    				
+		    			}else{
+		    				//error message : Can't do Hybrid : need to have 2 specimen of the same species
+		    				$ReproductionView->errorNotSameSpecies();
+		    			}
+		    		}else{
+		    			$ReproductionView->errorSameSex();
+		    		}
+		    	}else{
+		    		$ReproductionView->errorAge();
+		    	}
 
 	    		$view->closeDiv(); //close the large column div
 	    		$view->closeDiv(); //close the row div
