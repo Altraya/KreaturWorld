@@ -41,7 +41,7 @@ function drawRectangle(canvas, x, y, width, height)
 {
 	var ctx = canvas[0].getContext('2d'); 	//récupération du contexte
 	ctx.rect(x, y, width, height); // Cree le contour d'un rectangle dont l'angle suppérieur gauche se trouve aux coordonnées x y et ayant les dimensions largeur et hauteur : x, y, largeur, hauteur
-	ctx.strokeStyle = '#FF0000';
+	ctx.strokeStyle = '#000000';
 	ctx.stroke();
 
 }

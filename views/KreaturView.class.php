@@ -90,14 +90,23 @@ class KreaturView{
 		switch ($species) {
 			case 'Dragon':
 				switch ($color) {
-					case 'Noir':
-						$src = 'http://www.karakayn.com/KreaturWorld/images/drake_noir.png';
+					case 'Cyan':
+						$src = 'img/kreaturs/DragonCyan.png';
 						break;
 					case 'Rouge':
-						$src = 'http://www.karakayn.com/KreaturWorld/images/drake_rouge.png';
+						$src = 'img/kreaturs/DragonRouge.png';
 						break;
 					case 'Bleu':
-						$src = 'http://www.karakayn.com/KreaturWorld/images/drake_bleu.png';
+						$src = 'img/kreaturs/DragonBleu.png';
+						break;
+					case 'Vert':
+						$src = 'img/kreaturs/DragonVert.png';
+					break;
+					case 'Jaune':
+						$src = 'img/kreaturs/DragonJaune.png';
+					break;
+					case 'Rose':
+						$src = 'img/kreaturs/DragonRose.png';
 						break;
 					default:
 						//Couleur non autorisé
@@ -105,26 +114,63 @@ class KreaturView{
 						break;
 				}
 				
-				break;
+			break;
+
 			case 'Leviathan':
 				switch ($color) {
-					case 'Noir':
-						$src = 'http://auto.img.v4.skyrock.net/9729/74579729/pics/3075730683_1_3_iieT0KGE.jpg';
+					case 'Cyan':
+						$src = 'img/kreaturs/LeviathanCyan.png';
 						break;
 					case 'Rouge':
-						$src = 'http://www.pokemontrash.com/heartgold-soulsilver/images/leviator_rouge/leviator_rouge_fanart.PNG';
+						$src = 'img/kreaturs/LeviathanRouge.png';
 						break;
 					case 'Bleu':
-						$src = 'http://i10.servimg.com/u/f10/10/07/21/67/leviat10.jpg';
+						$src = 'img/kreaturs/LeviathanBleu.png';
+						break;
+					case 'Vert':
+						$src = 'img/kreaturs/LeviathanVert.png';
+					break;
+					case 'Jaune':
+						$src = 'img/kreaturs/LeviathanJaune.png';
+					break;
+					case 'Rose':
+						$src = 'img/kreaturs/LeviathanRose.png';
 						break;
 					default:
 						$src = 'http://www.metaroid.com/images/data/icone-pioupiou.jpg';
 						break;
 				}
-				break;
+			break;
+
+			case 'Hydre':
+				switch ($color) {
+					case 'Cyan':
+						$src = 'img/kreaturs/HydreCyan.png';
+						break;
+					case 'Rouge':
+						$src = 'img/kreaturs/HydreRouge.png';
+						break;
+					case 'Bleu':
+						$src = 'img/kreaturs/HydreBleu.png';
+						break;
+					case 'Vert':
+						$src = 'img/kreaturs/HydreVert.png';
+					break;
+					case 'Jaune':
+						$src = 'img/kreaturs/HydreJaune.png';
+					break;
+					case 'Rose':
+						$src = 'img/kreaturs/HydreRose.png';
+						break;
+					default:
+						$src = 'http://www.metaroid.com/images/data/icone-pioupiou.jpg';
+						break;
+				}
+			break;
+
 			default:
 				$src = 'http://www.metaroid.com/images/data/icone-pioupiou.jpg';
-				break;
+			break;
 		}
 		return $src;
 	}
