@@ -1,12 +1,12 @@
 <?php
     require_once("./views/GeneralView.class.php");
-    require_once("./views/IndexView.class.php");
+    require_once("./views/HomepageView.class.php");
     
-    $IndexView = new IndexView();
+    $viewHomepage = new HomepageView();
     $viewGeneral = new GeneralView();
     
-    $IndexView->header();
-    $IndexView->content();
+    $viewHomepage->header();
+    $viewHomepage->content();
     $viewGeneral->endPage(); 
 
 ?>
