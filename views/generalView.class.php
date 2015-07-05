@@ -17,10 +17,10 @@ class GeneralView{
 				<title>'.$pageTitle.'</title>
 				<link rel="stylesheet" href="css/foundation.css">
 				<link rel="stylesheet" href="css/normalize.css">
-				<link rel="stylesheet" href="css/hack.css">
-				<script src="js/vendor/modernizr.js"></script>
+				<link rel="stylesheet" href="css/style.css">				
 				<script src="js/vendor/jquery.js"></script>
-
+				<script src="js/foundation.min.js"></script>
+				<script src="js/vendor/modernizr.js"></script>
 			</head>
 		<body>';
 

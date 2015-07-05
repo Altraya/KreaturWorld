@@ -10,7 +10,7 @@ html {
 body {
 	margin:0;
 	padding:0;
-	background: url("../img/accueilBackground.jpg") no-repeat fixed center;
+	background: url("../img/backGround_lavaFlow.jpg") no-repeat fixed center;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -22,29 +22,30 @@ body {
 	margin-right: auto;
 }
 
-#FormCo,#FormInscri {
-    width: auto;
-    border-style: ridge;
-    border-width: 1px;
-    border-color: #cbcbcb;
-	border-radius: 1%;
-	background-color: #1a1d22;
-	margin-bottom: 20px;
-    margin-left: auto;
-	color: #cbcbcb;
-    float: right;
-
-}
-
-h2 {
-	color: #cbcbcb;
+h1, h2, h3 {
+	/*color: #cbcbcb;*/
+	color: black;
 }
 
 
-div,input,h2,.button {
+input, h1, h2, h3, h4, .button, .dragon {
     font-family: "dragon";
 }
 
+h1
+{
+	font-size: 45px;
+}
+
+h2
+{
+	font-size: 30px;
+}
+
+.center
+{
+	text-align: center;
+}
 
 option,label {
     color: #cbcbcb;
@@ -54,10 +55,22 @@ select,select:hover {
     background-color: #3a3434;
 }
 
-.row {
-    float: right;
-    padding-right: 25px;
+.description{
+	height: 90%;
+	background-color: white;
+	margin-top: 2%;
 }
+
+.space-top
+{
+    margin-top: 2%;
+}
+
+.row
+{
+	background-color: white;
+}
+
 .button {
     font-size: 100%
 }

@@ -177,14 +177,18 @@ class KreaturView{
 
 	//show the tab with picture and kreatur's informations
 	public function displayKreatur($tabKreatur){
+		$html="";
 
-		$html = '<div class="row" data-equalizer>';
+		$i = 0;
+
+		$html = '<div class="row" data-equalizer-mq="large-up">';
 			foreach ($tabKreatur as $kreaturs => $kreatur) {
 				$picture = $this->showPicture($kreatur->getSpecies(), $kreatur->getColor());
 
-				$html .= '<div class="large-4 medium-4 small-4 columns panel" data-equalizer-watch>';
+				$html .= '<div class="large-4 columns panel" data-equalizer-watch>';
 				$html .='<img src="'.$picture.'">';
-				$html .= '<p> Kreatur : '.$kreatur->getName() .' <br/>
+				$html .= '
+						<p> Kreatur : '.$kreatur->getName() .' <br/>
 							Espece : '.$kreatur->getSpecies().' <br/>
 							Couleur : '.$kreatur->getColor().' <br/>
 							Age : '.$kreatur->getAge().' ans <br/>
@@ -196,7 +200,7 @@ class KreaturView{
 			}
 		$html .= '</div>';
 		
-		echo $html;
+		echo($html);
 	}
 
 	public function errorNotSameSpecies()

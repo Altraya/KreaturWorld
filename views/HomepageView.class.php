@@ -5,96 +5,111 @@ class HomepageView{
     public function __construct(){
     }
     
-    /*Show the header */
-    public function header(){
-        $html = '';
-        $html.= '
-        <!doctype html>
-        <html>
-            <head>
-	           <title>Accueil Kreatur World</title>
-	           <link rel="stylesheet" type="text/css" href="css/foundation.css">
-	           <link rel="stylesheet" type="text/css" href="css/normalize.css">
-	           <link rel="stylesheet" type="text/css" href="css/style.css">
-	           <script type="text/javascript" src="js/foundation.min.js"></script>
-            </head>
-            <body>';
-            echo($html);
-    }
-    
     /* Show the content of the homepage */
     public function content(){
         $html = '';
         $html.= '
-  <img src="img/titre.png" alt="logo" id="logo" >
-	<div class="row">
-		<div class="small-4 large-4 columns"></div>
-  		<div class="small-4 large-4 columns"></div>
-	  		<div class="small-4 large-4 columns">
-	  			<div id="FormCo">
-					<h2 align="center">Connectez-vous</h2>
-					<form action="connexion.php" method="post">
-						<div class="small-12 columns">
-							Pseudo : <input type="text" name="fPseudo" style="background-color: #3a3434;color: #cbcbcb;">
-						</div>
-						<div class="small-12 columns">
-							Mot de passe : <input type="Password" name="fPassword" style="background-color: #3a3434;color: #cbcbcb;">
-						</div>
-						<input style="display:block;margin-left:auto;margin-right:auto;" class="button secondary" type="submit" value="Connexion">
-					</form>
-				</div>
-			</div>
-		
-	</div>
 
-	<div class="row">
-		<div class="small-4 large-4 columns"></div>
-  		<div class="small-4 large-4 columns"></div>
-	  		<div class="small-4 large-4 columns">
-				<div id="FormInscri">
-					<h2 align="center">Inscrivez-vous</h2>
+        <div class="container">     
+            <div class="row">
+                <div <div class="small-12 columns">             
+                    <img src="img/titre.png" alt="logo" id="logo" >
+                </div>
+            </div>
+            <div class="row right">
+                <div class="small-4 columns"></div>
+                <div class="small-4 columns"></div>
+                <div class="small-4 columns">
+                
+                    <form action="connexion.php" role="form" method="post">   
+                        
+                        <div class="form-group" id="FormCo">    
+
+                            <div class="text-center">
+                                <h2 class="grey">Connectez-vous</h2>
+                            </div>
+
+                            <div class="small-12 columns">
+                                <label for="inputPseudoConnexion" class="col-md-12 control-label">Pseudo :</label>
+                                <input type="text" class="form-control" id="inputPseudoConnexion" name="pseudo">
+                            </div>
+                            
+                            <div class="small-12 columns">
+                                <label for="inputPasswordConnexion" class="col-md-12 control-label">Mot de passe :</label>
+                                <input type="Password" class="form-control" id="inputPasswordConnexion" name="password">
+                            </div>
+
+                            <span class="input-group-btn">
+                                <div class="text-center">
+                                    <button class="btn btn-default" type="submit"  name="buttonConnexion" value="buttonConnexion">Connexion</button>
+                                </div>
+                            </span>
+                        </div>      
+                    </form>
+
                     
-                        <div class="small-12 columns">
-							<img id="krea" src="kreaturs/DragonJaune.png"
-						</div>
-					<form action="inscription.php" method="post">
-						
-						<div class="small-12 columns">
-							Nom Kreatur : <input type="text" name="fNomKrea" style="background-color: #3a3434;color: #cbcbcb;">
-						</div>
-                        <div class="small-12 columns">
-                            <label>Kreatur:</label>
-                            <select id="kreaturName">
-                                <option value="Dragon">Dragon</option>
-                                <option value="Leviathan">Leviathan</option>
-                                <option value="Hydre">Hydre</option>
-                            </select>
-                        <div class="small-12 columns">
-                            <label>Sexe:</label>
-                                <input type="radio" name="sex" value="male"> Male   
-                                <input type="radio" name="sex" value="femelle"> Femelle 
-                        </div>
+                    <form action="inscription.php" role="form" method="post">
 
-                        </div>
-                        <div class="small-12 columns" style="padding-bottom:13px">
-                            <label>Couleur:</label>
-                            <select id="color">
-                                <option value="Bleu">Bleu</option>
-                                <option value="Cyan">Cyan</option>
-                                <option value="Jaune">Jaune</option>
-                                <option value="Rouge">Rouge</option>
-                                <option value="Rose">Rose</option>
-                                <option value="Vert">Vert</option>
-                                <option value="Violet">Violet</option>
-                            </select>
-                        </div>
-    
-						<input style="display:block;margin-left:auto;margin-right:auto;margin-top:auto;" class="button secondary" type="submit" value="Inscription">
-					</form>
-				</div>
-			</div>
-		
-	</div>';
+                        <div class="form-group" id="FormInscri">
+
+                            <div class="text-center">
+                                <h2 class="grey">Inscrivez-vous</h2>
+                            </div>  
+
+                            <div class="small-12 columns">
+                                <img id="krea" src="./img/kreaturs/DragonJaune.png"
+                            </div>
+                            
+                            <div class="small-12 columns">
+                                <label for="inputKreaturName" class="col-md-12 control-label">Nom Kreatur :</label>
+                                <input type="text" class="form-control" id="inputKreaturName" name="fNomKrea">
+                            </div>
+
+                            <div class="small-12 columns space">
+                                <label for="kreaturName">Kreatur:</label>
+                                <select class="form-control" id="kreaturName">
+                                    <option value="Dragon">Dragon</option>
+                                    <option value="Leviathan">Leviathan</option>
+                                    <option value="Hydre">Hydre</option>
+                                </select>
+                            </div>
+                       
+
+                            <div class="small-12 columns space">
+                                <label for="color">Couleur:</label>
+                                <select class="form-control" id="color">
+                                    <option value="Bleu">Bleu</option>
+                                    <option value="Cyan">Cyan</option>
+                                    <option value="Jaune">Jaune</option>
+                                    <option value="Rouge">Rouge</option>
+                                    <option value="Rose">Rose</option>
+                                    <option value="Vert">Vert</option>
+                                    <option value="Violet">Violet</option>
+                                </select>
+                            </div>
+
+                            <div class="small-12 columns">
+                                <div class="text-center">
+                                    <input type="radio" name="sex" value="male"><label class="radio-inline">Male</label>
+                                    <input type="radio" name="sex" value="femelle"><label class="radio-inline">Femelle</label>
+                                </div>
+                            </div>
+
+                            <span class="input-group-btn">
+                                <div class="text-center">
+                                    <button class="btn btn-default" type="submit" value="Inscription">Inscription</button>
+                                </div>
+                            </span>
+
+                        </div>                  
+                    </form>
+                    
+                </div>  
+            </div>
+        </div>
+        <script type="text/javascript" src="js/changeKreaOption.js"></script>
+
+        ';
         echo($html);
     }
 }

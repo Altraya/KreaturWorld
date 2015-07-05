@@ -1,12 +1,13 @@
 <?php
     require_once("./views/GeneralView.class.php");
-    require_once("./views/HomepageView.class.php");
+    require_once("./views/InscriptionView.class.php");
     
-    $viewHomepage = new HomepageView();
+    $view = new InscriptionView();
     $viewGeneral = new GeneralView();
     
-    $viewHomepage->header();
-    $viewHomepage->content();
+    //include specific header and not the general just for the homepage
+    $view->header("Accueil - Kreatur World");
+    $view->homePageContent();
     $viewGeneral->endPage(); 
 
 ?>

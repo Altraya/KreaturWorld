@@ -10,13 +10,15 @@ class HomeView{
 	public function intro(){
 		$html = "";
 		$html.= '
-		<div class="row">
+		<div class="row description">
 			<div class="small-12 large-12 columns">
-				<h1>Actualites</h1>
+					<h1>Actualites</h1>
 				<hr/>
 			</div>
 			<div class="small-8 large-8 columns">
-				<center><p>Qu\'est ce qui ce trame en Altraya ?</p></center>
+				<div class="center">
+					<h2>Qu\'est ce qui ce trame en Altraya ?</h2>
+				</div>
 				<hr/>
 				<p>- Ajout d\'une fonctionnalité d\'élevage : la reproduction</p>
 			</div>

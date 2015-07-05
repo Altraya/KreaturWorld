@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "dragon";
+    src : url("../polices/dragonslapper.ttf");
+}
+
+body {
+    margin:0;
+    padding:0;
+    background: url("../img/accueilBackground.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.panel, h1, h2, input, .button, select, option, label{
+    font-family: "dragon";
+}
+
+.form-group .h2 {
+    color: white;
+}
+
+option,label {
+    color: #cbcbcb;
+}
+
+#FormCo, #FormInscri {
+    width: 100%;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: #cbcbcb;
+    border-radius: 1%;
+    background-color: #1a1d22;
+    margin-bottom: 20px;
+    margin-left: auto;
+    color: #cbcbcb;
+    float: right;
+    border-radius: 0;
+}
+
+.btn, .btn-default
+{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: "dragon";
+    background-color: #e7e7e7;
+    border-color: #b9b9b9;
+    color: #333333;
+    width: 80%;
+    height: 3em;
+    border-radius: 0;
+    text-align: center;
+}
+
+.form-control
+{
+    background-color: #3a3434 !important;
+    color: #cbcbcb !important;
+    border-radius: 0;
+}
+
+.radio-inline
+{
+    display: inline;
+    margin-right: 5%;
+}
+
+.grey
+{
+     color: #cbcbcb !important;
+}
+
+.right
+{
+    float: right;
+}
+
+.space
+{
+    margin-bottom: 5%;
+}
+
+img 
+{
+    display: block;
+    width: 100%
+}
+
+html, body, .container {
+    height: 100%;
+}
