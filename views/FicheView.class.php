@@ -1,11 +1,11 @@
 <?php
 
 /**
-* 	ActionView.class.php : Specific view for the action part
+* 	FicheView.class.php : Specific view for the "fiche"
 *
 *	Author : Karakayn
 */
-class ActionView{
+class FicheView{
 
 	/*Constructeur*/
 	public function __construct(){
@@ -13,16 +13,15 @@ class ActionView{
 
 
 	//title and welcome message
-	public function intro(){
+	public function welcome($Krea){
 		$html = '
 		<div class="row description">
 			<div class="small-12 large-12 columns">
-				<h1>Actions</h1>
+				<h1 class="center">Fiche de '.$Krea.'</h1>
 				<hr/>
-				<p>Cette page vous permet diverses actions sur vos kreaturs tel que : La reproduction / les attaques / l\'exploration</p>
+				
 			</div>
-		
-
+				
 		';
 		echo $html;
 	}

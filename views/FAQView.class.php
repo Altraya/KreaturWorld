@@ -16,13 +16,14 @@ class FAQView{
 	public function intro(){
 		$html = "";
 		$html.= '
-		<div class="row">
-			<div class="small-12 large-12 columns">
-				<h1>FAQ</h1>
-				<hr/>
-				<center><p>La FAQ contient toutes les questions et précisions sur le monde d\'Altraya. N\'hésitez pas à souvent la consulter !</center>
+		<div class="row description">
+			<div class="row">
+				<div class="small-12 large-12 columns">
+					<h1>FAQ</h1>
+					<hr/>
+					<p class="center">La FAQ contient toutes les questions et précisions sur le monde d\'Altraya. N\'hésitez pas à souvent la consulter !</p>
+				</div>
 			</div>
-		</div>
 		';
 		echo($html);
 	}
@@ -113,7 +114,7 @@ class FAQView{
 					<p>Ce paragraphe est à venir : Les guildes ne sont pour l\'instant fonctionnelle, ce paragraphe sera mis à jour en temps voulu.</p>
 				</div>
 			</div>
-
+		</div>
 		';
 		echo $html;
 	}

@@ -18,7 +18,6 @@
 		if(!isset($_SESSION['playersId'])){
 			$viewG->notConnected();
 
-			echo("KEK EKEKEKEKEKEKKEK");
 		}else{
 			$view->welcome();
 			

@@ -10,7 +10,7 @@ class MarcheView{
 	public function intro(){
 		$html = "";
 		$html.= '
-		<div class="row">
+		<div class="row description">
 			<div class="small-10 large-10 columns">
 				<h1>Le marche</h1>
 				<hr/>
@@ -19,7 +19,7 @@ class MarcheView{
 			<div class="small-2 large-2 columns">
 				<img src="img/coffreOr.png" alt="Coffre en or"/>
 			</div>
-		</div>
+	
 		';
 
 		echo($html);
@@ -28,13 +28,13 @@ class MarcheView{
 	public function noArticles(){
 		$html = "";
 		$html .= '
-		<div class="row">
+
 			<div class="small-12 large-12 columns">
-				<div class="panel">
+				<div class="panel center">
 					<p> Il n\'y a actuellement aucun article de disponible ! Revenez plus tard !</p>
 				</div>
 			</div>
-		</div>
+
 		';
 		echo($html);
 	}

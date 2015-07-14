@@ -10,16 +10,16 @@ class ReproductionView{
 	public function intro(){
 		$html = "";
 		$html.= '
-		<div class="row">
+		<div class="row description">
 			<div class="small-10 large-10 columns">
 				<h1>Reproduction</h1>
 				<hr/>
-				<center><p>Selectionnez deux Kreaturs pour les faire se reproduire. La reproduction n\'est disponible que tous les 50ans pour une Kreatur.</p></center>
+				<p class="center">Selectionnez deux Kreaturs pour les faire se reproduire. La reproduction n\'est disponible que tous les 50 ans pour une Kreatur.</p>
 			</div>
 			<div class="small-2 large-2 columns">
 				<img src="img/icone male-femelle.png" alt="Icone male-femelle"/>				
 			</div>
-		</div>
+	
 
 		';
 
@@ -29,13 +29,13 @@ class ReproductionView{
 	public function noReproduction(){
 		$html = "";
 		$html .= '
-		<div class="row">
+		
 			<div class="small-12 large-12 columns">
-				<div class="panel">
+				<div class="panel center">
 					<p>Vous ne disposez pas de suffisament de Kreatur pour accéder à la reproduction.</p>
 				</div>
 			</div>
-		</div>
+	
 		';
 		echo($html);
 	}
@@ -45,7 +45,7 @@ class ReproductionView{
 	{
 		$html = "";
 		$html .= '
-			<div class="panel">
+			<div class="panel center">
 				Erreur : Vous devez choisir deux individus de la même espèce pour les faire s\'accoupler !
 			</div>
 		';
@@ -57,7 +57,7 @@ class ReproductionView{
 	{
 		$html = "";
 		$html .= '
-			<div class="panel">
+			<div class="panel center">
 				Erreur : Vous devez choisir un individu mâle et femelle pour pouvoir les faire se reproduire !
 			</div>
 		';
@@ -69,7 +69,7 @@ class ReproductionView{
 	{
 		$html = "";
 		$html .= '
-			<div class="panel">
+			<div class="panel center">
 				Erreur : Une de vos kreaturs n\'a pas l\'age requis ! Elles doivent avoir au moins 250 ans pour pouvoir se reproduire !
 			</div>
 		';
@@ -81,7 +81,7 @@ class ReproductionView{
 	{
 		$html = "";
 		$html .= '
-			<div class="panel">
+			<div class="panel center">
 				Félicitation ! '.$babyKreatur->getName().' est né, il vous attend dans l\'antre !
 			</div>
 		';

@@ -15,7 +15,7 @@ class AntreView{
 	//title and welcome message
 	public function welcome(){
 		$html = '
-		<div class="row space-top">
+		<div class="row description">
 			<div class="small-10 large-10 columns">
 				<h1>L\'antre</h1>
 				<hr/>
@@ -24,7 +24,7 @@ class AntreView{
 			<div class="small-2 large-2 columns">
 				<img src="img/grotte.png" alt="Antre"/>
 			</div>
-		</div>
+				
 		';
 		echo $html;
 	}

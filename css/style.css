@@ -56,7 +56,7 @@ select,select:hover {
 }
 
 .description{
-	height: 90%;
+	min-height: 90%;
 	background-color: white;
 	margin-top: 2%;
 }
@@ -72,5 +72,39 @@ select,select:hover {
 }
 
 .button {
-    font-size: 100%
+    font-size: 100%;
+}
+
+.min {
+	min-width: 100%;
+}
+ .nerf {
+ 	min-height: 200px;
+ 	max-height: 200px;
+ 	margin-bottom: 2em;
+ }
+
+ .change:hover {
+ 	background-color: #8C8585;
+ 	color: white;
+ }
+
+ [class*="column"] + [class*="column"]:last-child {
+ 	float: left;
+ }
+
+ .border {
+ 	border: 1px solid black;
+ }
+
+ .case {
+ 	max-width: 5em;
+ 	min-width: 5em;
+
+ 	max-height: 5em;
+ 	min-height: 5em;
+ }
+
+.no-padding {
+	padding : 0em;
 }

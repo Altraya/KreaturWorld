@@ -89,6 +89,14 @@ class GeneralView{
 							  	<li><a href="hilrad.php">Antre d\'Hilrad</a></li>
 							</ul>
 						</li>
+
+						<li class="has-dropdown">
+							<a href="#">Compte</a>
+							<ul class="dropdown">
+							  	<li><a href="compte.php">Mes informations</a></li>
+							  	<li><a href="allopass.php">Créditer mon compte</a></li>
+							</ul>
+						</li>
 						
 				';
 				//if the player is connected : show deconnexion
@@ -113,63 +121,6 @@ $html.='
 		echo($html);
 	}
 
-//not use
-	public function menuBar(){
-		$html = "";
-		
-		$html.='	    
-
-		<!-- Left Nav Section -->
-		<div class="large-8 medium-8 small-8 columns">
-			<ul>	
-				<li class="has-dropdown">
-					<a href="#">Joueur</a>
-					<ul class="dropdown">
-					  	<li><a href="#">Bureau</a></li>
-					  	<li><a href="#">Guilde</a></li>
-					  	<li><a href="#">Quest</a></li>
-					  	<li><a href="#">Faction</a></li>
-					</ul>
-				</li>
-
-				<li class="has-dropdown">
-					<a href="#">Antre</a>
-					<ul class="dropdown">
-					  	<li><a href="antre.php">Kreaturs</a></li>
-					  	<li><a href="action.php">Actions</a></li>
-					  	<li><a href="#">Cimetière</a></li>
-					</ul>
-				</li>
-
-				<li class="has-dropdown">
-					<a href="#">Communauté</a>
-					<ul class="dropdown">
-					  	<li><a href="#">News</a></li>
-					  	<li><a href="#">Forum</a></li>
-					  	<li><a href="#">Classement</a></li>
-					</ul>
-				</li>
-
-				<li class="has-dropdown">
-					<a href="#">Bataille</a>
-					<ul class="dropdown">
-					  	<li><a href="#">En cours</a></li>
-					  	<li><a href="#">MAP</a></li>
-					</ul>
-				</li>
-
-				<li class="has-dropdown">
-					<a href="#">Boutique</a>
-					<ul class="dropdown">
-					  	<li><a href="#">Marché</a></li>
-					  	<li><a href="#">Antre d\'Hilrad</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-		';
-		echo($html);
-	}
 
 	public function closeBody(){
 		echo'</body>';
@@ -227,7 +178,7 @@ $html.='
 
 	public function notConnected(){
 		echo'
-		<div class="panel">
+		<div class="panel center">
 			<p> Vous n\'êtes pas connecté vous ne pouvez donc pas accéder à cette partie. <br/>
 				<a href="inscription.php">Inscrivez vous</a> ou <a href="connexion.php">connectez vous</a> pour y accéder
 			</p>

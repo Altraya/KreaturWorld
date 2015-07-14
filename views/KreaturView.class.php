@@ -18,9 +18,9 @@ class KreaturView{
 		$html = "";
 
 		$html.='		
-		<div class="row">
+		
 			<div class="small-12 large-12 columns">';
-		$html.= '<table>';
+		$html.= '<table class="min">';
 		foreach ($tabKreatur as $kreaturs => $kreatur) {
 			$html .= '
 					<tr>
@@ -50,9 +50,9 @@ class KreaturView{
 
 		$html.='		
 		<form data-abide id="reproductionForm" action="reproduction.php" method="post">
-			<div class="row">
+			
 				<div class="small-12 large-12 columns">';
-			$html.= '<table>';
+			$html.= '<table class="min">';
 			foreach ($tabKreatur as $kreaturs => $kreatur) {
 				$html .= '
 						<tr>
@@ -69,14 +69,14 @@ class KreaturView{
 			$html .= '
 
 				</div>
-			</div>
+		
 			';
 			$html.='
-			<div class="row">
+		
 				<div class="large-12 columns">
 					<button name="buttonAccouplement" form="reproductionForm" class="button secondary expand" type="submit">Accouplement</button>
 				</div>
-			</div>
+						
 			';
 			$html .= '
 
@@ -179,26 +179,106 @@ class KreaturView{
 	public function displayKreatur($tabKreatur){
 		$html="";
 
-		$i = 0;
-
 		$html = '<div class="row" data-equalizer-mq="large-up">';
 			foreach ($tabKreatur as $kreaturs => $kreatur) {
+
 				$picture = $this->showPicture($kreatur->getSpecies(), $kreatur->getColor());
+				
+				$html .= '<a href="fiche.php?kreatur='.$kreatur->getId().' ">';
+					$html .= '<div class="large-4 columns panel change" data-equalizer-watch>';
+						$html .= '<div class="large-12 columns">';
+							$html .= '<div class="large-12 columns nerf">';
+								$html .='<img src="'.$picture.'">';
+							$html .='</div>';
 
-				$html .= '<div class="large-4 columns panel" data-equalizer-watch>';
-				$html .='<img src="'.$picture.'">';
-				$html .= '
-						<p> Kreatur : '.$kreatur->getName() .' <br/>
-							Espece : '.$kreatur->getSpecies().' <br/>
-							Couleur : '.$kreatur->getColor().' <br/>
-							Age : '.$kreatur->getAge().' ans <br/>
-							Sexe : '.$kreatur->getSex().' <br/>
-							Propriétaire : '.$kreatur->getOwner().'
-						</p>';
+							$html .= '<div class="large-12 columns center">';
+								$html .= '
+										<p> Kreatur : '.$kreatur->getName() .' <br/>
+											Espece : '.$kreatur->getSpecies().' <br/>
+											Couleur : '.$kreatur->getColor().' <br/>
+											Age : '.$kreatur->getAge().' ans <br/>
+											Sexe : '.$kreatur->getSex().' <br/>
+											Propriétaire : '.$kreatur->getOwner().'
+										</p>';		
 
-				$html .= '</div>';	
+							$html .= '</div>';	
+						$html .= '</div>';	
+					$html .= '</div>';	
+				$html .= '</a>';	
 			}
 		$html .= '</div>';
+		
+		echo($html);
+	}
+
+		//show the tab with picture and kreatur's informations
+	public function displayFichePublic($kreatur){
+		$html="";
+
+				$picture = $this->showPicture($kreatur->getSpecies(), $kreatur->getColor());
+				
+				//The top with statistiques
+				$html .= '<div class="large-12 columns center border">';
+						$html .='Nom : '.$kreatur->getName().' Sexe : '.$kreatur->getSex().' ';
+				$html .='</div>';
+
+				$html .= '<div class="large-3 columns border">';
+
+				$html .= '</div>';	
+
+				
+				$html .= '<div class="large-6 columns border no-padding">';
+					$html .= '<div class="large-1 columns center border no-padding">';
+						$html .= '<div class="large-4 columns center border no-padding min">';
+							$html .='<img src="img/kreaturs/HydreRose.png">';
+						$html .='</div>';
+
+						$html .= '<div class="large-4 columns center border no-padding min">';
+							$html .='<img src="img/kreaturs/HydreRose.png">';
+						$html .='</div>';
+							
+						$html .= '<div class="large-4 columns center border no-padding min">';
+							$html .='<img src="img/kreaturs/HydreRose.png">';
+						$html .='</div>';
+					$html .='</div>';		
+
+					$html .= '<div class="large-10 columns center border">';
+						$html .='<img src="'.$picture.'">';
+					$html .='</div>';
+
+					$html .= '<div class="large-1 columns center border no-padding">';
+						$html .= '<div class="large-4 columns center border no-padding min">';
+							$html .='<img src="img/kreaturs/HydreRose.png">';
+						$html .='</div>';
+						$html .= '<div class="large-4 columns center border no-padding min">';
+							$html .='<img src="img/kreaturs/HydreRose.png">';
+						$html .='</div>';
+
+						$html .= '<div class="large-4 columns center border no-padding min">';
+							$html .='<img src="img/kreaturs/HydreRose.png">';
+						$html .='</div>';
+					$html .='</div>';
+
+
+					$html .= '<div class="large-12 columns center border">';
+						$html .= '
+								<p> Kreatur : '.$kreatur->getName() .' <br/>
+									Espece : '.$kreatur->getSpecies().' <br/>
+									Couleur : '.$kreatur->getColor().' <br/>
+									Age : '.$kreatur->getAge().' ans <br/>
+									Sexe : '.$kreatur->getSex().' <br/>
+									Propriétaire : '.$kreatur->getOwner().'
+								</p>';		
+
+					$html .= '</div>';	
+
+
+				$html .= '</div>';	
+
+				$html .= '<div class="large-3 columns border">';
+
+				$html .= '</div>';	
+			$html .= '</div>';	
 		
 		echo($html);
 	}
