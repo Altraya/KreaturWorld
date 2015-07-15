@@ -23,15 +23,21 @@ class KreaturManager{
 	//Add a kreatur in database
 	public function add(Kreatur $kreatur, $idOwner){
 
+		$name = $kreatur->getName();
+		$species = $kreatur->getSpecies();
+		$color = $kreatur->getColor();
+		$age = $kreatur->getAge();
+		$sex = $kreatur->getSex();
+
 		$sql = "INSERT INTO kreatur (name, species, color, age, idOwner, kreatur.sex)
 			VALUES (:name, :species, :color, :age, :idOwner, :sex)";
 		$req = $this->_db->prepare($sql);                     
-		$req->bindParam(':name', $kreatur->getName(), PDO::PARAM_STR);
-		$req->bindParam(':species', $kreatur->getSpecies(), PDO::PARAM_STR);
-		$req->bindParam(':color', $kreatur->getColor(), PDO::PARAM_STR);
-		$req->bindParam(':age', $kreatur->getAge(), PDO::PARAM_INT);
+		$req->bindParam(':name', $name, PDO::PARAM_STR);
+		$req->bindParam(':species', $species, PDO::PARAM_STR);
+		$req->bindParam(':color', $color, PDO::PARAM_STR);
+		$req->bindParam(':age', $age, PDO::PARAM_INT);
 		$req->bindParam(':idOwner', $idOwner, PDO::PARAM_INT);
-		$req->bindParam(':sex', $kreatur->getSex(), PDO::PARAM_STR);
+		$req->bindParam(':sex', $sex, PDO::PARAM_STR);
 		$req->execute();
 		$req->closeCursor();
 	}
