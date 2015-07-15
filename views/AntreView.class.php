@@ -15,7 +15,7 @@ class AntreView{
 	//title and welcome message
 	public function welcome(){
 		$html = '
-		<div class="row description">
+		<div class="row description transparent">
 			<div class="small-10 large-10 columns">
 				<h1>L\'antre</h1>
 				<hr/>

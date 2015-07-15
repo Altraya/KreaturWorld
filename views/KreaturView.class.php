@@ -218,136 +218,138 @@ class KreaturView{
 				$picture = $this->showPicture($kreatur->getSpecies(), $kreatur->getColor());
 
 
-				//Left div
-				$html .= '<div class="large-6 columns">';
+			//Left div
+			$html .= '<div class="large-6 columns margin2PourcentTop no-padding white">';
+				//Pictures
+				$html .= '<div class="large-12 columns center border">';
+					$html .='<img src="'.$picture.'">';
+				$html .='</div>';
 
-					//Pictures
-					$html .= '<div class="large-12 columns center border">';
-						$html .='<img src="'.$picture.'">';
+				//Stuff
+				$html .= '<div class="large-12 columns center border no-padding">';
+					$html .= '<div class="large-1 columns center border no-padding case">';
+						$html .='<img src="img/IconeEquipement/casqueBarre.png">';
 					$html .='</div>';
 
-					//Stuff
-					$html .= '<div class="large-12 columns center border no-padding">';
-						$html .= '<div class="large-1 columns center border no-padding case">';
-							$html .='<img src="img/IconeEquipement/casqueBarre.png">';
-						$html .='</div>';
-
-						$html .= '<div class="large-1 columns center border no-padding case">';
-							$html .='<img src="img/kreaturs/HydreRose.png">';
-						$html .='</div>';
-
-						$html .= '<div class="large-1 columns center border no-padding case">';
-							$html .='<img src="img/kreaturs/HydreRose.png">';
-						$html .='</div>';
-
-						$html .= '<div class="large-1 columns center border no-padding case">';
-							$html .='<img src="img/kreaturs/HydreRose.png">';
-						$html .='</div>';
-
-						$html .= '<div class="large-1 columns center border no-padding case">';
-							$html .='<img src="img/kreaturs/HydreRose.png">';
-						$html .='</div>';
-
-						$html .= '<div class="large-1 columns center border no-padding case">';
-							$html .='<img src="img/kreaturs/HydreRose.png">';
-						$html .='</div>';
+					$html .= '<div class="large-1 columns center border no-padding case">';
+						$html .='<img src="img/kreaturs/HydreRose.png">';
 					$html .='</div>';
 
-					//statistics
-					$html .= '<div class="large-12 columns border">';
-						$html .= '<div class="large-12 columns no-padding">';
-							$html .= '<div class="large-2 columns no-padding">';
-								$html .= 'Vie :';
-							$html .='</div>';
-
-							$html .= '<div class="progress large-10 columns success">';
-								$html.='<span class="meter" style="width: [1 - 100]%"></span>';
-							$html .='</div>';
-						$html .= '</div>';
-
-						$html .= '<div class="large-12 columns no-padding">';
-							$html .= '<div class="large-2 columns no-padding">';
-								$html .= 'Rage :';
-							$html .='</div>';
-
-							$html .= '<div class="progress large-10 columns alert">';
-								$html.='<span class="meter" style="width: [1 - 100]%"></span>';
-							$html .='</div>';
-						$html .= '</div>';
-
-						$html.='</hr>';
-
-						$html .= '<div class="large-12 columns no-padding">';
-							$html .= '<div class="large-2 columns no-padding">';
-								$html .= 'Force :';
-							$html .='</div>';
-
-							$html .= '<div class="large-10 columns ">';
-								$html.='&nbsp;';
-							$html .='</div>';
-						$html .= '</div>';
-
-						$html .= '<div class="large-12 columns no-padding">';
-							$html .= '<div class="large-2 columns no-padding">';
-								$html .= 'Agilité :';
-							$html .='</div>';
-
-							$html .= '<div class="large-10 columns">';
-								$html.='&nbsp;';
-							$html .='</div>';
-						$html .= '</div>';
-
-						$html .= '<div class="large-12 columns no-padding">';
-							$html .= '<div class="large-2 columns no-padding">';
-								$html .= 'Endurance :';
-							$html .='</div>';
-
-							$html .= '<div class="large-10 columns">';
-								$html.='&nbsp;';
-							$html .='</div>';
-						$html .= '</div>';
-
-						$html .= '<div class="large-12 columns no-padding">';
-							$html .= '<div class="large-2 columns no-padding">';
-								$html .= 'Intelligence :';
-							$html .='</div>';
-
-							$html .= '<div class="large-10 columns">';
-								$html.='&nbsp;';
-							$html .='</div>';
-						$html .= '</div>';
-					$html .= '</div>';
-
-
-				$html .= '</div>';	
-
-				//Right div
-				$html .= '<div class="large-6 columns ">';
-					$html .= '<div class="large-12 columns border padding20Pourcent">';
-						$html .= '<h2 class="center">Statistiques</h2>';
-						$html .= '<hr/>';
-						$html .= 'Kreatur : '.$kreatur->getName().' <br/>';
-						$html .= 'Espece : '.$kreatur->getSpecies().' <br/>';
-						$html .= 'Couleur : '.$kreatur->getColor().' <br/>';
-						$html .= 'Age : '.$kreatur->getAge().' <br/>';
-						$html .= 'Sexe : '.$kreatur->getSex().' <br/>';
-						$html .= 'Propriétaire : '.$kreatur->getOwner().' <br/>';
-					$html .='</div>';
-				
-					$html .= '<div class="large-12 columns border padding20Pourcent">';
-						$html .= '<h2 class="center">Ventes </h2>';
-						$html .= '<hr/>';
-						
+					$html .= '<div class="large-1 columns center border no-padding case">';
+						$html .='<img src="img/kreaturs/HydreRose.png">';
 					$html .='</div>';
 
-					$html .= '<div class="large-12 columns border padding20Pourcent">';
-						$html .= '<h2 class="center">Objets magiques </h2>';
-						$html .= '<hr/>';
-						
+					$html .= '<div class="large-1 columns center border no-padding case">';
+						$html .='<img src="img/kreaturs/HydreRose.png">';
+					$html .='</div>';
+
+					$html .= '<div class="large-1 columns center border no-padding case">';
+						$html .='<img src="img/kreaturs/HydreRose.png">';
+					$html .='</div>';
+
+					$html .= '<div class="large-1 columns center border no-padding case">';
+						$html .='<img src="img/kreaturs/HydreRose.png">';
 					$html .='</div>';
 				$html .='</div>';
 
+				//statistics
+				$html .= '<div class="large-12 columns border">';
+					$html .= '<div class="large-12 columns no-padding">';
+						$html .= '<div class="large-2 columns no-padding">';
+							$html .= 'Vie :';
+						$html .='</div>';
+
+						$html .= '<div class="progress large-10 columns success">';
+							$html.='<span class="meter" style="width: [1 - 100]%"></span>';
+						$html .='</div>';
+					$html .= '</div>';
+
+					$html .= '<div class="large-12 columns no-padding">';
+						$html .= '<div class="large-2 columns no-padding">';
+							$html .= 'Rage :';
+						$html .='</div>';
+
+						$html .= '<div class="progress large-10 columns alert">';
+							$html.='<span class="meter" style="width: [1 - 100]%"></span>';
+						$html .='</div>';
+					$html .= '</div>';
+
+					$html.='</hr>';
+
+					$html .= '<div class="large-12 columns no-padding">';
+						$html .= '<div class="large-2 columns no-padding">';
+							$html .= 'Force :';
+						$html .='</div>';
+
+						$html .= '<div class="large-10 columns ">';
+							$html.='&nbsp;';
+						$html .='</div>';
+					$html .= '</div>';
+
+					$html .= '<div class="large-12 columns no-padding">';
+						$html .= '<div class="large-2 columns no-padding">';
+							$html .= 'Agilité :';
+						$html .='</div>';
+
+						$html .= '<div class="large-10 columns">';
+							$html.='&nbsp;';
+						$html .='</div>';
+					$html .= '</div>';
+
+					$html .= '<div class="large-12 columns no-padding">';
+						$html .= '<div class="large-2 columns no-padding">';
+							$html .= 'Endurance :';
+						$html .='</div>';
+
+						$html .= '<div class="large-10 columns">';
+							$html.='&nbsp;';
+						$html .='</div>';
+					$html .= '</div>';
+
+					$html .= '<div class="large-12 columns no-padding">';
+						$html .= '<div class="large-2 columns no-padding">';
+							$html .= 'Intelligence :';
+						$html .='</div>';
+
+						$html .= '<div class="large-10 columns">';
+							$html.='&nbsp;';
+						$html .='</div>';
+					$html .= '</div>';
+				$html .= '</div>';
+
+					
 			$html .= '</div>';	
+
+	
+			//Right div
+			$html .= '<div class="large-6 columns margin2PourcentTop transparent no-padding-right">';
+			
+				$html .= '<div class="large-12 columns border white heightTier">';
+					$html .= '<h2 class="center">Statistiques</h2>';
+					$html .= '<hr/>';
+					$html .= 'Kreatur : '.$kreatur->getName().' <br/>';
+					$html .= 'Espece : '.$kreatur->getSpecies().' <br/>';
+					$html .= 'Couleur : '.$kreatur->getColor().' <br/>';
+					$html .= 'Age : '.$kreatur->getAge().' <br/>';
+					$html .= 'Sexe : '.$kreatur->getSex().' <br/>';
+					$html .= 'Propriétaire : '.$kreatur->getOwner().' <br/>';
+				$html .='</div>';
+			
+				$html .= '<div class="large-12 columns border margin2PourcentTop white heightTier">';
+					$html .= '<h2 class="center">Ventes </h2>';
+					$html .= '<hr/>';
+					
+				$html .='</div>';
+
+				$html .= '<div class="large-12 columns border margin2PourcentTop white heightTier">';
+					$html .= '<h2 class="center">Objets magiques </h2>';
+					$html .= '<hr/>';
+					
+				$html .='</div>';
+					
+			$html .='</div>';
+
+		$html .= '</div>';	
 		
 		echo($html);
 	}

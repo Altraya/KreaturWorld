@@ -113,6 +113,38 @@ select,select:hover {
 	margin-bottom: 0%;
 }
 
-.padding20Pourcent {
+.margin2PourcentTop {
+	margin-top : 2%;
+}
+
+.margin20Pourcent {
 	margin-bottom : 20%;
 }
+
+.transparent {
+	background-color: transparent;
+}
+
+.white {
+	background-color: white;
+}
+
+.border-transparent {
+ 	border: 1px solid transparent;
+ }
+
+.marginLeft {
+ 	margin-left: 0.2%;
+ }
+
+.width1Pourcent {
+ 	width : 1%;
+ }
+
+.no-padding-right {
+ 	padding-right: 0%;
+ }
+
+ .heightTier {
+ 	height: calc(94%/3) !important;
+ }
