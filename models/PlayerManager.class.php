@@ -26,17 +26,24 @@ class PlayerManager{
 
 	//Add a player in database
 	public function add(Player $player){
-		
+		$pseudo = $player->getPseudo();
+		$pwd = $player->getPwd();
+		$mail = $player->getMail();
+		$birthdate = $player->getBirthdate();
+		$sex = $player->getSex();
+		$avatar = $player->getAvatar();
+		$inscriptionDate = $player->getInscriptionDate();
+
 		$sql = "INSERT INTO player (pseudo, pwd, mail, birthdate, sex, avatarUrl, inscriptionDate)
 			VALUES (:pseudo, :pwd, :mail, :birthdate, :sex, :avatarUrl, :inscriptionDate)";
 		$req = $this->_db->prepare($sql);                     
-		$req->bindParam(':pseudo', $player->getPseudo(), PDO::PARAM_STR);
-		$req->bindParam(':pwd', $player->getPwd(), PDO::PARAM_STR);
-		$req->bindParam(':mail', $player->getMail(), PDO::PARAM_STR);
-		$req->bindParam(':birthdate', $player->getBirthdate(), PDO::PARAM_STR);
-		$req->bindParam(':sex', $player->getSex(), PDO::PARAM_STR);
-		$req->bindParam(':avatarUrl', $player->getAvatar(), PDO::PARAM_STR);
-		$req->bindParam(':inscriptionDate', $player->getInscriptionDate(), PDO::PARAM_STR);		
+		$req->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+		$req->bindParam(':pwd', $pwd, PDO::PARAM_STR);
+		$req->bindParam(':mail', $mail, PDO::PARAM_STR);
+		$req->bindParam(':birthdate', $birthdate, PDO::PARAM_STR);
+		$req->bindParam(':sex', $sex, PDO::PARAM_STR);
+		$req->bindParam(':avatarUrl', $avatar, PDO::PARAM_STR);
+		$req->bindParam(':inscriptionDate', $inscriptionDate, PDO::PARAM_STR);		
 		$req->execute();
 		$req->closeCursor();
 
@@ -55,13 +62,18 @@ class PlayerManager{
 	//get a player by his name/pseudo
 	public function getPlayer($pseudo){
 		$pseudo = (String) $pseudo;
-		$player = array();
+		$players = array();
 		$req = $this->_db->query('SELECT id, pseudo, pwd, mail, birthdate, sex, avatarUrl, inscriptionDate FROM player WHERE pseudo = \''.$pseudo.'\' ');
 		while ($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 			$players = new Player($donnees);
 		}
 		$req->closeCursor();
-		return $players;
+		if(!empty($players)){
+			return $players;
+		}else{
+			return null;
+		}
+
 	}
 /*
 	//Permet de lister tous les joueurs en bdd
@@ -103,10 +115,13 @@ class PlayerManager{
 
 	//Return the id, pseudo and password of one player : if it's not null the player exist.
 	public function verifConnexion($pseudo, $pass){
+
+		$passCrypte = sha1($pass);
+
 		$sql = "SELECT id, pseudo, pwd FROM player WHERE pseudo = :pseudo AND pwd = :pass";
 		$req = $this->_db->prepare($sql);
 		$req->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
-		$req->bindParam(':pass', $pass, PDO::PARAM_STR);
+		$req->bindParam(':pass', $passCrypte, PDO::PARAM_STR);
 		$req->execute() or die(print_r($this->_db->errorInfo()));
 		$resultat = $req->fetch();
 		$req->closeCursor();
