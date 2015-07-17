@@ -95,7 +95,7 @@
 
 
 					//verif if the player exist and return his id (+pseudo and pass)
-					$infoPlayer = $playerManager->verifConnexion($infoForm["pseudo"], $infoForm["pwd"]);
+					$infoPlayer = $playerManager->verifConnexion($infoForm["pseudo"], sha1($infoForm["pwd"]));
 
 					//if the player exist : create the session variable
 					if($infoPlayer !== NULL){

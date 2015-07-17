@@ -178,7 +178,7 @@ $html.='
 
 	public function notConnected(){
 		echo'
-		<div class="panel center">
+		<div class="panel center margin2PourcentTop">
 			<p> Vous n\'êtes pas connecté vous ne pouvez donc pas accéder à cette partie. <br/>
 				<a href="inscription.php">Inscrivez vous</a> ou <a href="connexion.php">connectez vous</a> pour y accéder
 			</p>

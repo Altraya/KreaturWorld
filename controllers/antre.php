@@ -16,6 +16,7 @@
 		//if the player is not connected -> error message
 		//if($_SESSION['playersId'] == NULL){
 		if(!isset($_SESSION['playersId'])){
+			var_dump($_SESSION);
 			$viewG->notConnected();
 
 		}else{

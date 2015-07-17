@@ -27,7 +27,7 @@
 		$playerManager = new PlayerManager($db);
 
 		//formatting data
-		$pseudo = htmlspecialchars($_POST['pseudo']);
+		$pseudo = htmlspecialchars(ucfirst($_POST['pseudo']));
 		$password = sha1(htmlspecialchars($_POST['password']));	//crypt password
 
 		//table who countain informations about player
@@ -37,7 +37,7 @@
 		$infoPlayer = $playerManager->verifConnexion($pseudo, $password);
 
 		//if the player exist : create the session variable
-		if($infoPlayer != NULL){
+		if($infoPlayer !== NULL){
 			$_SESSION['playersId'] = $infoPlayer['id'];
 			$_SESSION['playersName'] = $infoPlayer['pseudo'];
 		}else{

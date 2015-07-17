@@ -116,12 +116,10 @@ class PlayerManager{
 	//Return the id, pseudo and password of one player : if it's not null the player exist.
 	public function verifConnexion($pseudo, $pass){
 
-		$passCrypte = sha1($pass);
-
 		$sql = "SELECT id, pseudo, pwd FROM player WHERE pseudo = :pseudo AND pwd = :pass";
 		$req = $this->_db->prepare($sql);
 		$req->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
-		$req->bindParam(':pass', $passCrypte, PDO::PARAM_STR);
+		$req->bindParam(':pass', $pass, PDO::PARAM_STR);
 		$req->execute() or die(print_r($this->_db->errorInfo()));
 		$resultat = $req->fetch();
 		$req->closeCursor();
