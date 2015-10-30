@@ -49,9 +49,10 @@ class GeneralView{
 							<a href="#">Joueur</a>
 							<ul class="dropdown">
 					  			<li><a href="home.php">Bureau</a></li>
-							  	<li><a href="#">Guilde</a></li>
-							  	<li><a href="#">Quest</a></li>
-							  	<li><a href="#">Faction</a></li>
+							  	<li><a href="guilde.php">Guilde</a></li>
+							  	<li><a href="quest.php">Quest</a></li>
+							  	<li><a href="faction.php">Faction</a></li>
+							  	<li><a href="vente.php">Vente</a></li>
 							</ul>
 						</li>
 
@@ -67,8 +68,8 @@ class GeneralView{
 						<li class="has-dropdown">
 							<a href="#">Communauté</a>
 							<ul class="dropdown">
-							  	<li><a href="#">News</a></li>
-							  	<li><a href="#">Forum</a></li>
+							  	<li><a href="news.php">News</a></li>
+							  	<li><a href="forum.php">Forum</a></li>
 							  	<li><a href="classement.php">Classement</a></li>
 							  	<li><a href="FAQ.php">FAQ</a></li>
 							</ul>

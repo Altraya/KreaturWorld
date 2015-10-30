@@ -277,41 +277,41 @@ class KreaturView{
 					$html.='</hr>';
 
 					$html .= '<div class="large-12 columns no-padding">';
-						$html .= '<div class="large-2 columns no-padding">';
+						$html .= '<div class="large-3 columns no-padding">';
 							$html .= 'Force :';
 						$html .='</div>';
 
-						$html .= '<div class="large-10 columns ">';
+						$html .= '<div class="large-9 columns ">';
 							$html.='&nbsp;';
 						$html .='</div>';
 					$html .= '</div>';
 
 					$html .= '<div class="large-12 columns no-padding">';
-						$html .= '<div class="large-2 columns no-padding">';
+						$html .= '<div class="large-3 columns no-padding">';
 							$html .= 'Agilité :';
 						$html .='</div>';
 
-						$html .= '<div class="large-10 columns">';
+						$html .= '<div class="large-9 columns">';
 							$html.='&nbsp;';
 						$html .='</div>';
 					$html .= '</div>';
 
 					$html .= '<div class="large-12 columns no-padding">';
-						$html .= '<div class="large-2 columns no-padding">';
+						$html .= '<div class="large-3 columns no-padding">';
 							$html .= 'Endurance :';
 						$html .='</div>';
 
-						$html .= '<div class="large-10 columns">';
+						$html .= '<div class="large-9 columns">';
 							$html.='&nbsp;';
 						$html .='</div>';
 					$html .= '</div>';
 
 					$html .= '<div class="large-12 columns no-padding">';
-						$html .= '<div class="large-2 columns no-padding">';
+						$html .= '<div class="large-3 columns no-padding">';
 							$html .= 'Intelligence :';
 						$html .='</div>';
 
-						$html .= '<div class="large-10 columns">';
+						$html .= '<div class="large-9 columns">';
 							$html.='&nbsp;';
 						$html .='</div>';
 					$html .= '</div>';
@@ -343,6 +343,12 @@ class KreaturView{
 
 				$html .= '<div class="large-12 columns border margin2PourcentTop white heightTier">';
 					$html .= '<h2 class="center">Objets magiques </h2>';
+					$html .= '<hr/>';
+					
+				$html .='</div>';
+
+				$html .= '<div class="large-12 columns border margin2PourcentTop white heightTier">';
+					$html .= '<h2 class="center">Reproduction </h2>';
 					$html .= '<hr/>';
 					
 				$html .='</div>';
