@@ -63,12 +63,22 @@ select,select:hover {
 
 .space-top
 {
-    margin-top: 2%;
+    margin-top: 2% !important;
 }
 
-.row
+.white_bg
 {
 	background-color: white;
+}
+
+.black_bg
+{
+	background-color: #181616;
+}
+
+.footer{
+	color : #eaeaea;
+	font-size: 12px;
 }
 
 .button {
@@ -125,10 +135,6 @@ select,select:hover {
 	background-color: transparent;
 }
 
-.white {
-	background-color: white;
-}
-
 .border-transparent {
  	border: 1px solid transparent;
  }
@@ -147,4 +153,16 @@ select,select:hover {
 
  .heightTier {
  	height: calc(94%/3) !important;
+ }
+
+ .lowOpacity {
+ 	opacity: 0.5;
+ }
+
+ .max {
+ 	max-width: 100% !important;
+ }
+
+ .separation {
+ 	border-right: 1px solid white;
  }

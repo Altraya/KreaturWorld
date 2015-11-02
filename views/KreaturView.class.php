@@ -179,7 +179,7 @@ class KreaturView{
 	public function displayKreatur($tabKreatur){
 		$html="";
 
-		$html = '<div class="row" data-equalizer-mq="large-up">';
+		$html = '<div class="row space-top" data-equalizer-mq="large-up">';
 			foreach ($tabKreatur as $kreaturs => $kreatur) {
 
 				$picture = $this->showPicture($kreatur->getSpecies(), $kreatur->getColor());
@@ -200,11 +200,17 @@ class KreaturView{
 											Sexe : '.$kreatur->getSex().' <br/>
 											Propriétaire : '.$kreatur->getOwner().'
 										</p>';		
+							$html .= '</div>';
+							$html .= '<div>';
+								$html .= '
+										<div class="large-12 columns center">
 
-							$html .= '</div>';	
+										</div>
+								';
+							$html .= '</div>';
 						$html .= '</div>';	
 					$html .= '</div>';	
-				$html .= '</a>';	
+				$html .= '</a>';
 			}
 		$html .= '</div>';
 		

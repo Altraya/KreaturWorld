@@ -16,9 +16,7 @@
 		//if the player is not connected -> error message
 		//if($_SESSION['playersId'] == NULL){
 		if(!isset($_SESSION['playersId'])){
-			var_dump($_SESSION);
 			$viewG->notConnected();
-
 		}else{
 			$view->welcome();
 			
@@ -35,14 +33,16 @@
 
 			$playerManager = new PlayerManager($db);
 
-
 			//Allow you to recover the player with the right nickname to display his Kreaturs'
 			$player = $playerManager->getPlayer($_SESSION['playersName']);
 
 			//affiche les dragons du joueur
 			$viewK->displayKreatur($manager->getListKreatur($player));
-		}
 
+
+		}
+	$viewG->closeDiv();
+	$viewG->footer();
 
 	$viewG->endPage();
 

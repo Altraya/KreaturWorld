@@ -17,6 +17,7 @@ class GeneralView{
 				<title>'.$pageTitle.'</title>
 				<link rel="stylesheet" href="css/foundation.css">
 				<link rel="stylesheet" href="css/normalize.css">
+				<link rel="stylesheet" href="css/foundation-icons/foundation-icons.css">
 				<link rel="stylesheet" href="css/style.css">				
 				<script src="js/vendor/jquery.js"></script>
 				<script src="js/foundation.min.js"></script>
@@ -158,13 +159,43 @@ $html.='
 	//Footer
 	public function footer(){
 		$html = '
-		<footer>
-			<p>
-			
-				&copy; Karakayn 2015
-			
-			</p>
-		</footer>
+		<div class="row black_bg max footer">
+            <div class="medium-12 columns">
+    		
+                <div class="row">
+                    
+                    <div class="medium-3 columns separation">
+	                    Compagnie & contact<br/>
+
+	                    contact@karakayn.com<br/>
+	                    c Karakayn 2014-2015 
+                    </div>
+                    <div class="medium-3 columns separation">
+                    	Law <br/>
+                    	Conditions générales d\'utilisation
+                    	
+                    </div>
+                    <div class="medium-3 columns separation">
+                    	Compte<br/>
+                    	Mes informations<br/>
+                    	
+                    </div>
+                    <div class="medium-3 columns">
+                        Rejoins-nous !
+                        <div id="social media">
+                        	
+                        	<i class="fi-social-facebook"></i>
+                        	<a href="#">Like us on Facebook</a>
+                        	<br/>
+                        	<i class="fi-social-twitter"></i>
+                        	<a href="#">Like us on Twitter</a>
+                        	<br/>
+                        </div>
+                    </div>
+                    
+	            </div>
+	        </div>
+	    </div>
 		';
 		echo $html;
 	}
